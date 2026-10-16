@@ -1,0 +1,2107 @@
+/* =========================================================
+   AUTH — ВХОД / РЕГИСТРАЦИЯ
+========================================================= */
+
+.auth-body {
+    margin: 0;
+
+    background: #f4efe6;
+
+    color: #1e1e1e;
+}
+
+
+/* =========================================================
+   ОБЩАЯ СТРАНИЦА
+========================================================= */
+
+.auth-page {
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: #f8f4ec;
+}
+
+
+/* =========================================================
+   ФОТОГРАФИЯ
+========================================================= */
+
+.auth-image {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: #292929;
+}
+
+.auth-image img {
+    display: block;
+
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* оранжевые декоративные линии */
+
+.auth-image-line {
+    position: absolute;
+
+    border: 2px solid #ff710b;
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.auth-image-line-top {
+    width: 320px;
+    height: 320px;
+
+    top: -220px;
+    right: -150px;
+}
+
+.auth-image-line-bottom {
+    width: 300px;
+    height: 300px;
+
+    bottom: -190px;
+    left: -170px;
+}
+
+
+/* =========================================================
+   ПРАВАЯ ЧАСТЬ
+========================================================= */
+
+.auth-main {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.auth-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 95px;
+
+    padding: 0 55px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 113, 11, 0.22);
+}
+
+
+/* LOGO */
+
+.auth-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.auth-logo img {
+    display: block;
+
+    width: 185px;
+    height: auto;
+}
+
+
+/* на главную */
+
+.auth-home {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #6b5a4c;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.auth-home span {
+    font-size: 18px;
+
+    color: #ff710b;
+}
+
+.auth-home:hover {
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.auth-content {
+    display: flex;
+
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+}
+
+
+.auth-form-wrapper {
+    width: 100%;
+    max-width: 510px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.auth-form-wrapper h1 {
+    margin: 0 0 20px;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 48px;
+    line-height: 0.98;
+    font-weight: 400;
+
+    color: #1e1e1e;
+}
+
+
+.auth-intro {
+    max-width: 440px;
+
+    margin: 0 0 40px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+
+    color: #3c3c3c;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.auth-form {
+    width: 100%;
+}
+
+
+/* field */
+
+.auth-field {
+    margin-bottom: 18px;
+}
+
+.auth-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #333333;
+}
+
+
+/* input */
+
+.auth-field input {
+    display: block;
+
+    width: 100%;
+    height: 52px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8d2ca;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    color: #1e1e1e;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-field input::placeholder {
+    color: #999999;
+}
+
+.auth-field input:focus {
+    border-color: #ff710b;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 113, 11, 0.08);
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 55px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+.password-toggle:hover {
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   CHECKBOX + FORGOT
+========================================================= */
+
+.auth-options {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin: 22px 0 27px;
+}
+
+
+.auth-checkbox {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+
+    color: #3c3c3c;
+}
+
+
+.auth-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.custom-checkbox {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 16px;
+    height: 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ff710b;
+    border-radius: 3px;
+
+    background: transparent;
+}
+
+
+.auth-checkbox input:checked + .custom-checkbox {
+    background: #ff710b;
+}
+
+
+.auth-checkbox input:checked + .custom-checkbox::after {
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+    top: 1px;
+
+    width: 5px;
+    height: 9px;
+
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    transform: rotate(45deg);
+}
+
+
+.auth-forgot {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #ff710b;
+
+    text-decoration: none;
+}
+
+.auth-forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   ORANGE BUTTON
+========================================================= */
+
+.auth-submit {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    width: 100%;
+    height: 54px;
+
+    padding: 0 25px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #ff710b;
+
+    cursor: pointer;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+
+    color: #ffffff;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.auth-submit:hover {
+    background: #ff8b3d;
+}
+
+.auth-submit:active {
+    transform: scale(0.995);
+}
+
+
+/* =========================================================
+   ИЛИ
+========================================================= */
+
+.auth-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ded7cd;
+}
+
+.auth-divider span {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #a29a91;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.auth-register-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 52px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ff710b;
+    border-radius: 8px;
+
+    background: transparent;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    color: #ff710b;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.auth-register-button:hover {
+    background: #ff710b;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   REGISTER PAGE
+========================================================= */
+
+.auth-register-wrapper {
+    max-width: 560px;
+}
+
+.auth-page-register .auth-content {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.auth-page-register .auth-form-wrapper h1 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.auth-page-register .auth-intro {
+    margin-bottom: 25px;
+}
+
+.auth-page-register .auth-field {
+    margin-bottom: 13px;
+}
+
+.auth-page-register .auth-field input {
+    height: 47px;
+}
+
+
+/* agreement */
+
+.auth-agreement {
+    margin: 20px 0;
+}
+
+.auth-agreement a {
+    color: #ff710b;
+
+    text-decoration: underline;
+}
+
+
+/* error */
+
+.auth-error {
+    min-height: 18px;
+
+    margin: 0 0 10px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #d84720;
+}
+
+
+/* login link */
+
+.auth-login-bottom {
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #777777;
+}
+
+.auth-login-bottom a {
+    margin-left: 4px;
+
+    color: #ff710b;
+
+    text-decoration: none;
+}
+
+.auth-login-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .auth-page {
+        grid-template-columns: 34% 66%;
+    }
+
+    .auth-header {
+        padding: 0 35px;
+    }
+
+    .auth-content {
+        padding: 40px;
+    }
+
+    .auth-form-wrapper h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .auth-page {
+        display: block;
+
+        min-height: 100vh;
+    }
+
+    .auth-image {
+        display: none;
+    }
+
+    .auth-main {
+        min-height: 100vh;
+    }
+
+    .auth-header {
+        min-height: 78px;
+
+        padding: 0 20px;
+    }
+
+    .auth-logo img {
+        width: 145px;
+    }
+
+    .auth-home {
+        font-size: 12px;
+    }
+
+    .auth-content {
+        align-items: flex-start;
+
+        padding: 55px 20px 45px;
+    }
+
+    .auth-form-wrapper {
+        max-width: none;
+    }
+
+    .auth-form-wrapper h1 {
+        font-size: 36px;
+    }
+
+    .auth-intro {
+        margin-bottom: 32px;
+    }
+
+    .auth-options {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .auth-page-register .auth-form-wrapper h1 {
+        font-size: 33px;
+    }
+
+}
+/* =========================================================
+   ЛИЧНЫЙ КАБИНЕТ
+========================================================= */
+
+.cabinet-body {
+    margin: 0;
+    background: #f4efe6;
+    color: #1e1e1e;
+}
+
+.cabinet {
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.cabinet-sidebar {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    box-sizing: border-box;
+
+    padding: 32px 22px 25px;
+
+    background: #1d1d1d;
+}
+
+.cabinet-logo {
+    display: block;
+    margin: 0 8px 42px;
+}
+
+.cabinet-logo img {
+    display: block;
+    width: 175px;
+    height: auto;
+}
+
+.cabinet-account-label {
+    margin: 0 12px 18px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    color: #777;
+}
+
+
+/* menu */
+
+.cabinet-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cabinet-menu-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 47px;
+
+    padding: 0 13px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+
+    cursor: pointer;
+    text-align: left;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #cfcfcf;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.cabinet-menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.cabinet-menu-item.active {
+    background: #ff710b;
+    color: #fff;
+}
+
+.cabinet-menu-icon {
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* bottom */
+
+.cabinet-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+.cabinet-back-site,
+.cabinet-logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 42px;
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #aaa;
+
+    text-decoration: none;
+}
+
+.cabinet-back-site:hover,
+.cabinet-logout:hover {
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.cabinet-main {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.cabinet-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+
+    padding: 0 42px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 113, 11, 0.3);
+
+    background: #f8f4ec;
+}
+
+.cabinet-top-account {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.cabinet-top-account-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.cabinet-top-account strong {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+.cabinet-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cabinet-user-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.cabinet-user-text strong {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.cabinet-user-text span {
+    font-size: 10px;
+    color: #888;
+}
+
+.cabinet-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    border-radius: 50%;
+
+    background: #ff710b;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #fff;
+}
+
+.cabinet-mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.cabinet-section {
+    display: none;
+
+    padding: 52px 42px 70px;
+}
+
+.cabinet-section.active {
+    display: block;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+.cabinet-page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    margin-bottom: 45px;
+}
+
+.cabinet-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    color: #ff710b;
+}
+
+.cabinet-page-heading h1 {
+    margin: 0;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: clamp(38px, 4vw, 61px);
+    line-height: 0.95;
+    font-weight: 400;
+}
+
+.cabinet-heading-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    max-width: 330px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.cabinet-heading-info span {
+    font-size: 11px;
+    color: #999;
+}
+
+.cabinet-heading-info strong {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.cabinet-section-intro {
+    max-width: 400px;
+    margin: 0;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.cabinet-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #ff710b;
+    border-bottom: 1px solid #ff710b;
+
+    margin-bottom: 70px;
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 205px;
+
+    padding: 27px 30px;
+
+    box-sizing: border-box;
+}
+
+.summary-card + .summary-card {
+    border-left: 1px solid #ff710b;
+}
+
+.summary-label {
+    margin-bottom: 25px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+
+    color: #777;
+}
+
+.summary-value {
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 36px;
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.summary-value small {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.summary-meter {
+    font-size: 25px;
+}
+
+.summary-description {
+    margin-top: 9px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #888;
+}
+
+.summary-link {
+    margin-top: auto;
+    padding: 0;
+
+    border: 0;
+    background: none;
+
+    cursor: pointer;
+    text-align: left;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   BLOCK HEADING
+========================================================= */
+
+.cabinet-block-heading {
+    margin-bottom: 25px;
+}
+
+.cabinet-block-heading h2,
+.cabinet-panel h2 {
+    margin: 0;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-bottom: 70px;
+
+    border-top: 1px solid #ff710b;
+    border-bottom: 1px solid #ff710b;
+}
+
+.quick-action {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 190px;
+
+    padding: 23px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+    text-align: left;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.quick-action + .quick-action {
+    border-left: 1px solid #ff710b;
+}
+
+.quick-action:hover {
+    background: #ff710b;
+    color: #fff;
+}
+
+.quick-action-number {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #ff710b;
+}
+
+.quick-action:hover .quick-action-number {
+    color: #fff;
+}
+
+.quick-action-title {
+    align-self: center;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.15;
+}
+
+.quick-action-arrow {
+    justify-self: end;
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.cabinet-dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+
+    gap: 20px;
+}
+
+.cabinet-panel {
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 113, 11, 0.55);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.cabinet-large-panel {
+    margin-top: 25px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.panel-heading button {
+    padding: 0;
+
+    border: 0;
+    background: none;
+
+    cursor: pointer;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   MINI TABLE
+========================================================= */
+
+.mini-table-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ded8ce;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.mini-table-row strong {
+    font-weight: 400;
+}
+
+.mini-table-head {
+    padding-top: 0;
+
+    font-size: 10px;
+    color: #999;
+}
+
+
+/* =========================================================
+   DASHBOARD REQUEST
+========================================================= */
+
+.dashboard-request {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard-request strong {
+    margin: 17px 0 8px;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.dashboard-request p {
+    margin: 0 0 25px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.dashboard-request small {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.request-status,
+.table-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 24px;
+
+    padding: 0 9px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 113, 11, 0.12);
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+
+    color: #ff710b;
+}
+
+.request-status.closed {
+    background: #ece8e1;
+    color: #777;
+}
+
+.table-status.unpaid {
+    background: #ff710b;
+    color: #fff;
+}
+
+
+/* =========================================================
+   READINGS
+========================================================= */
+
+.readings-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 20px;
+}
+
+.meter-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.meter-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding: 18px;
+
+    border-top: 1px solid #ff710b;
+    border-bottom: 1px solid #ff710b;
+}
+
+.meter-info span {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+
+    color: #888;
+}
+
+.meter-info strong {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.cabinet-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.cabinet-field > span {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #666;
+}
+
+.cabinet-field input,
+.cabinet-field select,
+.cabinet-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d3ccc2;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    color: #1e1e1e;
+}
+
+.cabinet-field input,
+.cabinet-field select {
+    height: 50px;
+    padding: 0 15px;
+}
+
+.cabinet-field textarea {
+    min-height: 135px;
+
+    padding: 15px;
+
+    resize: vertical;
+}
+
+.cabinet-field input:focus,
+.cabinet-field select:focus,
+.cabinet-field textarea:focus {
+    border-color: #ff710b;
+}
+
+.reading-input {
+    position: relative;
+}
+
+.reading-input input {
+    padding-right: 70px;
+}
+
+.reading-input > span {
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+
+    color: #888;
+}
+
+.cabinet-form-message {
+    min-height: 18px;
+
+    margin: 0 0 15px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.cabinet-orange-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    min-width: 190px;
+    min-height: 47px;
+
+    padding: 0 24px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #ff710b;
+
+    cursor: pointer;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+
+    color: #fff;
+
+    transition: background 0.2s ease;
+}
+
+.cabinet-orange-button:hover {
+    background: #ff8b3d;
+}
+
+.cabinet-outline-button {
+    min-height: 42px;
+
+    padding: 0 20px;
+
+    border: 1px solid #ff710b;
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #ff710b;
+}
+
+.cabinet-outline-button:hover {
+    background: rgba(255, 113, 11, 0.06);
+}
+
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.instruction-list {
+    margin-top: 30px;
+}
+
+.instruction-list > div {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #ded8ce;
+}
+
+.instruction-list span {
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 16px;
+
+    color: #ff710b;
+}
+
+.instruction-list p {
+    margin: 0;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.cabinet-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.cabinet-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.cabinet-table th {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #ff710b;
+
+    text-align: left;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    color: #888;
+}
+
+.cabinet-table td {
+    padding: 18px 12px;
+
+    border-bottom: 1px solid #ded8ce;
+}
+
+
+/* =========================================================
+   PAYMENTS
+========================================================= */
+
+.payment-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.payment-total span {
+    font-size: 11px;
+    color: #888;
+}
+
+.payment-total strong {
+    margin-top: 5px;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.payment-action {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    border-top: 1px solid #ff710b;
+    border-bottom: 1px solid #ff710b;
+}
+
+.payment-action h2 {
+    margin: 0 0 7px;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.payment-action p {
+    margin: 0;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.document-card {
+    display: grid;
+    grid-template-columns: 52px 1fr 30px;
+    align-items: center;
+
+    gap: 17px;
+
+    min-height: 115px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ff710b;
+    border-radius: 12px;
+
+    color: #1e1e1e;
+
+    text-decoration: none;
+
+    transition: background 0.2s ease;
+}
+
+.document-card:hover {
+    background: rgba(255, 113, 11, 0.06);
+}
+
+.document-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 52px;
+
+    border: 1px solid #ff710b;
+    border-radius: 5px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+
+    color: #ff710b;
+}
+
+.document-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.document-type {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+
+    color: #ff710b;
+}
+
+.document-card strong {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.document-card small {
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+
+    color: #999;
+}
+
+.document-download {
+    justify-self: end;
+
+    font-size: 23px;
+
+    color: #ff710b;
+}
+
+
+/* =========================================================
+   REQUESTS
+========================================================= */
+
+.request-form-panel {
+    display: none;
+
+    margin-bottom: 25px;
+}
+
+.request-form-panel.open {
+    display: block;
+}
+
+.cabinet-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.cabinet-field-full {
+    grid-column: 1 / -1;
+}
+
+.request-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ded8ce;
+}
+
+.request-row:first-child {
+    padding-top: 0;
+}
+
+.request-row > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.request-row strong {
+    margin-top: 13px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.request-row p {
+    margin: 7px 0 0;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+    color: #777;
+}
+
+.request-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 6px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.request-meta strong {
+    margin: 0;
+
+    font-size: 12px;
+}
+
+.request-meta span {
+    font-size: 10px;
+    color: #999;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.profile-data {
+    margin: 25px 0 30px;
+}
+
+.profile-data > div {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ded8ce;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.profile-data span {
+    font-size: 10px;
+    color: #888;
+}
+
+.profile-data strong {
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.security-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-top: 25px;
+}
+
+.security-row > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.security-row strong {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.security-row span {
+    font-size: 11px;
+    color: #888;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .cabinet {
+        grid-template-columns: 215px minmax(0, 1fr);
+    }
+
+    .cabinet-sidebar {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .cabinet-logo img {
+        width: 155px;
+    }
+
+    .cabinet-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cabinet-topbar {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-action:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid #ff710b;
+    }
+
+    .quick-action:nth-child(4) {
+        border-top: 1px solid #ff710b;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .cabinet {
+        display: block;
+    }
+
+    .cabinet-sidebar {
+        position: fixed;
+
+        z-index: 100;
+
+        left: -280px;
+        top: 0;
+
+        width: 260px;
+
+        transition: left 0.25s ease;
+    }
+
+    .cabinet-sidebar.open {
+        left: 0;
+    }
+
+    .cabinet-mobile-menu {
+        display: block;
+
+        width: 35px;
+        height: 35px;
+
+        border: 0;
+        background: transparent;
+
+        cursor: pointer;
+
+        font-size: 22px;
+    }
+
+    .cabinet-topbar {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .cabinet-top-account {
+        display: none;
+    }
+
+    .cabinet-section {
+        padding: 40px 20px 60px;
+    }
+
+    .cabinet-page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .cabinet-heading-info {
+        max-width: none;
+    }
+
+    .cabinet-summary,
+    .readings-grid,
+    .cabinet-dashboard-grid,
+    .profile-grid,
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card + .summary-card {
+        border-left: 0;
+        border-top: 1px solid #ff710b;
+    }
+
+    .summary-card {
+        min-height: 170px;
+    }
+
+    .cabinet-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabinet-field-full {
+        grid-column: auto;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .cabinet-user-text {
+        display: none;
+    }
+
+    .cabinet-page-heading h1 {
+        font-size: 38px;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-action + .quick-action {
+        border-left: 0;
+        border-top: 1px solid #ff710b;
+    }
+
+    .meter-info {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-action,
+    .security-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .payment-total {
+        align-items: flex-start;
+    }
+
+    .request-row {
+        grid-template-columns: 1fr;
+    }
+
+    .request-meta {
+        align-items: flex-start;
+    }
+
+}
