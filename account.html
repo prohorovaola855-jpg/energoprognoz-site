@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Личный кабинет — Энергопрогноз</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="cabinet-body">
+
+
+<div class="cabinet">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="cabinet-sidebar">
+
+        <a href="index.html" class="cabinet-logo">
+            <img src="images/logo.png" alt="Энергопрогноз">
+        </a>
+
+
+        <div class="cabinet-account-label">
+            ЛИЧНЫЙ КАБИНЕТ
+        </div>
+
+
+        <nav class="cabinet-menu">
+
+            <button class="cabinet-menu-item active"
+                    data-section="dashboard">
+
+                <span class="cabinet-menu-icon">⌂</span>
+                <span>Главная</span>
+
+            </button>
+
+
+            <button class="cabinet-menu-item"
+                    data-section="readings">
+
+                <span class="cabinet-menu-icon">↗</span>
+                <span>Показания</span>
+
+            </button>
+
+
+            <button class="cabinet-menu-item"
+                    data-section="payments">
+
+                <span class="cabinet-menu-icon">₽</span>
+                <span>Начисления и платежи</span>
+
+            </button>
+
+
+            <button class="cabinet-menu-item"
+                    data-section="documents">
+
+                <span class="cabinet-menu-icon">▤</span>
+                <span>Документы</span>
+
+            </button>
+
+
+            <button class="cabinet-menu-item"
+                    data-section="requests">
+
+                <span class="cabinet-menu-icon">◇</span>
+                <span>Обращения</span>
+
+            </button>
+
+
+            <button class="cabinet-menu-item"
+                    data-section="profile">
+
+                <span class="cabinet-menu-icon">○</span>
+                <span>Профиль</span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="cabinet-sidebar-bottom">
+
+            <a href="index.html" class="cabinet-back-site">
+                ← На сайт
+            </a>
+
+            <a href="login.html" class="cabinet-logout">
+                Выйти
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="cabinet-main">
+
+
+        <!-- HEADER -->
+
+        <header class="cabinet-topbar">
+
+            <button class="cabinet-mobile-menu"
+                    id="mobileMenuButton"
+                    type="button">
+                ☰
+            </button>
+
+
+            <div class="cabinet-top-account">
+
+                <span class="cabinet-top-account-label">
+                    Лицевой счет
+                </span>
+
+                <strong>
+                    № 123456789
+                </strong>
+
+            </div>
+
+
+            <div class="cabinet-user">
+
+                <div class="cabinet-user-text">
+                    <strong>Анна Иванова</strong>
+                    <span>Физическое лицо</span>
+                </div>
+
+                <div class="cabinet-avatar">
+                    АИ
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section class="cabinet-section active"
+                 id="dashboard">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        ЛИЧНЫЙ КАБИНЕТ
+                    </span>
+
+                    <h1>
+                        ДОБРЫЙ ДЕНЬ,<br>
+                        АННА
+                    </h1>
+                </div>
+
+
+                <div class="cabinet-heading-info">
+
+                    <span>Лицевой счет № 123456789</span>
+
+                    <strong>
+                        г. Москва, ул. Примерная,
+                        д. 12, кв. 45
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUMMARY CARDS -->
+
+            <div class="cabinet-summary">
+
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        ТЕКУЩИЙ БАЛАНС
+                    </span>
+
+                    <strong class="summary-value">
+                        2 450 ₽
+                    </strong>
+
+                    <span class="summary-description">
+                        К оплате
+                    </span>
+
+                    <button class="summary-link"
+                            data-go="payments">
+                        Оплатить →
+                    </button>
+
+                </article>
+
+
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        ПОСЛЕДНИЕ ПОКАЗАНИЯ
+                    </span>
+
+                    <strong class="summary-value">
+                        <span id="dashboardReading">
+                            12 458
+                        </span>
+
+                        <small>кВт·ч</small>
+                    </strong>
+
+                    <span class="summary-description">
+                        Переданы 25.09.2026
+                    </span>
+
+                    <button class="summary-link"
+                            data-go="readings">
+                        Передать новые →
+                    </button>
+
+                </article>
+
+
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        ПРИБОР УЧЕТА
+                    </span>
+
+                    <strong class="summary-value summary-meter">
+                        № 00123456
+                    </strong>
+
+                    <span class="summary-description">
+                        Электросчетчик
+                    </span>
+
+                    <button class="summary-link"
+                            data-go="profile">
+                        Подробнее →
+                    </button>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="cabinet-block-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        БЫСТРЫЕ ДЕЙСТВИЯ
+                    </span>
+
+                    <h2>
+                        ЧТО ВЫ ХОТИТЕ СДЕЛАТЬ?
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button class="quick-action"
+                        data-go="readings">
+
+                    <span class="quick-action-number">
+                        01
+                    </span>
+
+                    <span class="quick-action-title">
+                        Передать<br>
+                        показания
+                    </span>
+
+                    <span class="quick-action-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button class="quick-action"
+                        data-go="payments">
+
+                    <span class="quick-action-number">
+                        02
+                    </span>
+
+                    <span class="quick-action-title">
+                        Оплатить<br>
+                        электроэнергию
+                    </span>
+
+                    <span class="quick-action-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button class="quick-action"
+                        data-go="documents">
+
+                    <span class="quick-action-number">
+                        03
+                    </span>
+
+                    <span class="quick-action-title">
+                        Скачать<br>
+                        квитанцию
+                    </span>
+
+                    <span class="quick-action-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button class="quick-action"
+                        data-go="requests">
+
+                    <span class="quick-action-number">
+                        04
+                    </span>
+
+                    <span class="quick-action-title">
+                        Задать<br>
+                        вопрос
+                    </span>
+
+                    <span class="quick-action-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- LAST OPERATIONS -->
+
+            <div class="cabinet-dashboard-grid">
+
+
+                <div class="cabinet-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="cabinet-eyebrow">
+                                ПОСЛЕДНИЕ
+                            </span>
+
+                            <h2>
+                                НАЧИСЛЕНИЯ
+                            </h2>
+                        </div>
+
+                        <button data-go="payments">
+                            Все начисления →
+                        </button>
+
+                    </div>
+
+
+                    <div class="mini-table">
+
+                        <div class="mini-table-row mini-table-head">
+                            <span>Период</span>
+                            <span>Расход</span>
+                            <span>Начислено</span>
+                        </div>
+
+                        <div class="mini-table-row">
+                            <strong>Сентябрь 2026</strong>
+                            <span>245 кВт·ч</span>
+                            <strong>1 530 ₽</strong>
+                        </div>
+
+                        <div class="mini-table-row">
+                            <strong>Август 2026</strong>
+                            <span>218 кВт·ч</span>
+                            <strong>1 360 ₽</strong>
+                        </div>
+
+                        <div class="mini-table-row">
+                            <strong>Июль 2026</strong>
+                            <span>231 кВт·ч</span>
+                            <strong>1 445 ₽</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="cabinet-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="cabinet-eyebrow">
+                                ПОСЛЕДНИЕ
+                            </span>
+
+                            <h2>
+                                ОБРАЩЕНИЯ
+                            </h2>
+                        </div>
+
+                        <button data-go="requests">
+                            Все обращения →
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-request">
+
+                        <span class="request-status">
+                            В РАБОТЕ
+                        </span>
+
+                        <strong>
+                            № 000124
+                        </strong>
+
+                        <p>
+                            Вопрос по начислению
+                            за сентябрь 2026 года
+                        </p>
+
+                        <small>
+                            Создано 27.09.2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ПОКАЗАНИЯ
+        ================================================== -->
+
+        <section class="cabinet-section"
+                 id="readings">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        ПРИБОР УЧЕТА
+                    </span>
+
+                    <h1>
+                        ПОКАЗАНИЯ
+                    </h1>
+                </div>
+
+                <p class="cabinet-section-intro">
+                    Передавайте актуальные показания
+                    электросчетчика и просматривайте историю.
+                </p>
+
+            </div>
+
+
+
+            <div class="readings-grid">
+
+
+                <div class="cabinet-panel reading-form-panel">
+
+                    <span class="cabinet-eyebrow">
+                        ПЕРЕДАТЬ ПОКАЗАНИЯ
+                    </span>
+
+                    <h2>
+                        НОВЫЕ ПОКАЗАНИЯ
+                    </h2>
+
+
+                    <div class="meter-info">
+
+                        <div>
+                            <span>Прибор учета</span>
+                            <strong>№ 00123456</strong>
+                        </div>
+
+                        <div>
+                            <span>Последние показания</span>
+                            <strong>
+                                <span id="currentReading">
+                                    12 458
+                                </span>
+                                кВт·ч
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <form id="readingForm">
+
+                        <label class="cabinet-field">
+
+                            <span>
+                                Текущие показания счетчика
+                            </span>
+
+                            <div class="reading-input">
+
+                                <input
+                                    id="newReading"
+                                    type="number"
+                                    min="12459"
+                                    placeholder="Введите показания"
+                                    required
+                                >
+
+                                <span>
+                                    кВт·ч
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <p class="cabinet-form-message"
+                           id="readingMessage">
+                        </p>
+
+
+                        <button class="cabinet-orange-button"
+                                type="submit">
+
+                            Передать показания
+                            <span>→</span>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <div class="cabinet-panel">
+
+                    <span class="cabinet-eyebrow">
+                        ИНФОРМАЦИЯ
+                    </span>
+
+                    <h2>
+                        КАК ПЕРЕДАТЬ ПОКАЗАНИЯ
+                    </h2>
+
+
+                    <div class="instruction-list">
+
+                        <div>
+                            <span>01</span>
+                            <p>
+                                Снимите актуальное значение
+                                с прибора учета.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            <p>
+                                Введите значение без дробной части.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            <p>
+                                Проверьте данные перед отправкой.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>04</span>
+                            <p>
+                                Нажмите «Передать показания».
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cabinet-panel cabinet-large-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="cabinet-eyebrow">
+                            ИСТОРИЯ
+                        </span>
+
+                        <h2>
+                            ПЕРЕДАННЫЕ ПОКАЗАНИЯ
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="cabinet-table-wrapper">
+
+                    <table class="cabinet-table"
+                           id="readingsTable">
+
+                        <thead>
+                            <tr>
+                                <th>Дата</th>
+                                <th>Показания</th>
+                                <th>Расход</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>25.09.2026</td>
+                                <td>12 458 кВт·ч</td>
+                                <td>245 кВт·ч</td>
+                                <td>
+                                    <span class="table-status">
+                                        Принято
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>25.08.2026</td>
+                                <td>12 213 кВт·ч</td>
+                                <td>218 кВт·ч</td>
+                                <td>
+                                    <span class="table-status">
+                                        Принято
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>25.07.2026</td>
+                                <td>11 995 кВт·ч</td>
+                                <td>231 кВт·ч</td>
+                                <td>
+                                    <span class="table-status">
+                                        Принято
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             НАЧИСЛЕНИЯ
+        ================================================== -->
+
+        <section class="cabinet-section"
+                 id="payments">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        ФИНАНСЫ
+                    </span>
+
+                    <h1>
+                        НАЧИСЛЕНИЯ<br>
+                        И ПЛАТЕЖИ
+                    </h1>
+                </div>
+
+                <div class="payment-total">
+
+                    <span>
+                        К оплате
+                    </span>
+
+                    <strong>
+                        2 450 ₽
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="payment-action">
+
+                <div>
+
+                    <span class="cabinet-eyebrow">
+                        ТЕКУЩИЙ БАЛАНС
+                    </span>
+
+                    <h2>
+                        2 450 ₽
+                    </h2>
+
+                    <p>
+                        Сумма к оплате по лицевому счету
+                        № 123456789
+                    </p>
+
+                </div>
+
+
+                <button class="cabinet-orange-button"
+                        type="button">
+                    Оплатить
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+
+            <div class="cabinet-panel cabinet-large-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="cabinet-eyebrow">
+                            ИСТОРИЯ
+                        </span>
+
+                        <h2>
+                            НАЧИСЛЕНИЯ
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="cabinet-table-wrapper">
+
+                    <table class="cabinet-table">
+
+                        <thead>
+                            <tr>
+                                <th>Период</th>
+                                <th>Расход</th>
+                                <th>Начислено</th>
+                                <th>Оплачено</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Сентябрь 2026</td>
+                                <td>245 кВт·ч</td>
+                                <td>1 530 ₽</td>
+                                <td>—</td>
+                                <td>
+                                    <span class="table-status unpaid">
+                                        К оплате
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Август 2026</td>
+                                <td>218 кВт·ч</td>
+                                <td>1 360 ₽</td>
+                                <td>1 360 ₽</td>
+                                <td>
+                                    <span class="table-status">
+                                        Оплачено
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Июль 2026</td>
+                                <td>231 кВт·ч</td>
+                                <td>1 445 ₽</td>
+                                <td>1 445 ₽</td>
+                                <td>
+                                    <span class="table-status">
+                                        Оплачено
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Июнь 2026</td>
+                                <td>198 кВт·ч</td>
+                                <td>1 238 ₽</td>
+                                <td>1 238 ₽</td>
+                                <td>
+                                    <span class="table-status">
+                                        Оплачено
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ДОКУМЕНТЫ
+        ================================================== -->
+
+        <section class="cabinet-section"
+                 id="documents">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        ЛИЦЕВОЙ СЧЕТ
+                    </span>
+
+                    <h1>
+                        ДОКУМЕНТЫ
+                    </h1>
+                </div>
+
+                <p class="cabinet-section-intro">
+                    Квитанции, договор и документы,
+                    связанные с вашим лицевым счетом.
+                </p>
+
+            </div>
+
+
+
+            <div class="documents-grid">
+
+
+                <a href="#"
+                   class="document-card">
+
+                    <span class="document-icon">
+                        PDF
+                    </span>
+
+                    <div>
+                        <span class="document-type">
+                            КВИТАНЦИЯ
+                        </span>
+
+                        <strong>
+                            Сентябрь 2026
+                        </strong>
+
+                        <small>
+                            PDF
+                        </small>
+                    </div>
+
+                    <span class="document-download">
+                        ↓
+                    </span>
+
+                </a>
+
+
+
+                <a href="#"
+                   class="document-card">
+
+                    <span class="document-icon">
+                        PDF
+                    </span>
+
+                    <div>
+                        <span class="document-type">
+                            КВИТАНЦИЯ
+                        </span>
+
+                        <strong>
+                            Август 2026
+                        </strong>
+
+                        <small>
+                            PDF
+                        </small>
+                    </div>
+
+                    <span class="document-download">
+                        ↓
+                    </span>
+
+                </a>
+
+
+
+                <a href="#"
+                   class="document-card">
+
+                    <span class="document-icon">
+                        PDF
+                    </span>
+
+                    <div>
+                        <span class="document-type">
+                            ДОГОВОР
+                        </span>
+
+                        <strong>
+                            Договор энергоснабжения
+                        </strong>
+
+                        <small>
+                            PDF
+                        </small>
+                    </div>
+
+                    <span class="document-download">
+                        ↓
+                    </span>
+
+                </a>
+
+
+
+                <a href="#"
+                   class="document-card">
+
+                    <span class="document-icon">
+                        PDF
+                    </span>
+
+                    <div>
+                        <span class="document-type">
+                            СПРАВКА
+                        </span>
+
+                        <strong>
+                            Состояние расчетов
+                        </strong>
+
+                        <small>
+                            PDF
+                        </small>
+                    </div>
+
+                    <span class="document-download">
+                        ↓
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ОБРАЩЕНИЯ
+        ================================================== -->
+
+        <section class="cabinet-section"
+                 id="requests">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        ПОДДЕРЖКА
+                    </span>
+
+                    <h1>
+                        ОБРАЩЕНИЯ
+                    </h1>
+                </div>
+
+                <button class="cabinet-orange-button"
+                        id="newRequestButton"
+                        type="button">
+
+                    Новое обращение
+                    <span>+</span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <div class="cabinet-panel request-form-panel"
+                 id="requestFormPanel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="cabinet-eyebrow">
+                            НОВОЕ
+                        </span>
+
+                        <h2>
+                            СОЗДАТЬ ОБРАЩЕНИЕ
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <form id="requestForm">
+
+                    <div class="cabinet-form-grid">
+
+                        <label class="cabinet-field">
+
+                            <span>Тема обращения</span>
+
+                            <select id="requestTopic" required>
+                                <option value="">
+                                    Выберите тему
+                                </option>
+
+                                <option>
+                                    Начисления и платежи
+                                </option>
+
+                                <option>
+                                    Передача показаний
+                                </option>
+
+                                <option>
+                                    Прибор учета
+                                </option>
+
+                                <option>
+                                    Качество электроснабжения
+                                </option>
+
+                                <option>
+                                    Договор
+                                </option>
+
+                                <option>
+                                    Другое
+                                </option>
+                            </select>
+
+                        </label>
+
+
+                        <label class="cabinet-field cabinet-field-full">
+
+                            <span>
+                                Сообщение
+                            </span>
+
+                            <textarea
+                                id="requestText"
+                                placeholder="Опишите ваш вопрос"
+                                required>
+                            </textarea>
+
+                        </label>
+
+                    </div>
+
+
+                    <button class="cabinet-orange-button"
+                            type="submit">
+
+                        Отправить обращение
+                        <span>→</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- LIST -->
+
+            <div class="cabinet-panel cabinet-large-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="cabinet-eyebrow">
+                            ИСТОРИЯ
+                        </span>
+
+                        <h2>
+                            МОИ ОБРАЩЕНИЯ
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="requests-list"
+                     id="requestsList">
+
+
+                    <article class="request-row">
+
+                        <div>
+                            <span class="request-status">
+                                В РАБОТЕ
+                            </span>
+
+                            <strong>
+                                Вопрос по начислению
+                            </strong>
+
+                            <p>
+                                Прошу проверить начисление
+                                за сентябрь 2026 года.
+                            </p>
+                        </div>
+
+                        <div class="request-meta">
+                            <strong>№ 000124</strong>
+                            <span>27.09.2026</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="request-row">
+
+                        <div>
+                            <span class="request-status closed">
+                                ЗАКРЫТО
+                            </span>
+
+                            <strong>
+                                Корректировка показаний
+                            </strong>
+
+                            <p>
+                                Переданы неверные показания
+                                прибора учета.
+                            </p>
+                        </div>
+
+                        <div class="request-meta">
+                            <strong>№ 000098</strong>
+                            <span>14.08.2026</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+        <section class="cabinet-section"
+                 id="profile">
+
+
+            <div class="cabinet-page-heading">
+
+                <div>
+                    <span class="cabinet-eyebrow">
+                        НАСТРОЙКИ
+                    </span>
+
+                    <h1>
+                        ПРОФИЛЬ
+                    </h1>
+                </div>
+
+                <p class="cabinet-section-intro">
+                    Персональные данные и информация
+                    о вашем лицевом счете.
+                </p>
+
+            </div>
+
+
+
+            <div class="profile-grid">
+
+
+                <div class="cabinet-panel">
+
+                    <span class="cabinet-eyebrow">
+                        ПОЛЬЗОВАТЕЛЬ
+                    </span>
+
+                    <h2>
+                        ЛИЧНЫЕ ДАННЫЕ
+                    </h2>
+
+
+                    <div class="profile-data">
+
+                        <div>
+                            <span>ФИО</span>
+                            <strong>
+                                Иванова Анна Сергеевна
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Телефон</span>
+                            <strong>
+                                +7 (999) 123-45-67
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Email</span>
+                            <strong>
+                                anna@example.ru
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <button class="cabinet-outline-button"
+                            type="button">
+                        Изменить данные
+                    </button>
+
+                </div>
+
+
+
+                <div class="cabinet-panel">
+
+                    <span class="cabinet-eyebrow">
+                        ЭЛЕКТРОСНАБЖЕНИЕ
+                    </span>
+
+                    <h2>
+                        ЛИЦЕВОЙ СЧЕТ
+                    </h2>
+
+
+                    <div class="profile-data">
+
+                        <div>
+                            <span>Лицевой счет</span>
+                            <strong>
+                                № 123456789
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Адрес</span>
+                            <strong>
+                                г. Москва, ул. Примерная,
+                                д. 12, кв. 45
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Прибор учета</span>
+                            <strong>
+                                № 00123456
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="cabinet-panel cabinet-large-panel">
+
+                <span class="cabinet-eyebrow">
+                    БЕЗОПАСНОСТЬ
+                </span>
+
+                <h2>
+                    ПАРОЛЬ И ДОСТУП
+                </h2>
+
+
+                <div class="security-row">
+
+                    <div>
+                        <strong>
+                            Пароль
+                        </strong>
+
+                        <span>
+                            Рекомендуется периодически
+                            обновлять пароль
+                        </span>
+                    </div>
+
+                    <button class="cabinet-outline-button"
+                            type="button">
+                        Изменить пароль
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/account.js"></script>
+
+</body>
+
+</html>

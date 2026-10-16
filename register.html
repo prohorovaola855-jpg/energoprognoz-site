@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Регистрация — Энергопрогноз</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-page auth-page-register">
+
+
+        <!-- ЛЕВАЯ ФОТОГРАФИЯ -->
+
+        <div class="auth-image">
+            <img src="images/vxod.png" alt="Линии электропередачи">
+
+            <div class="auth-image-line auth-image-line-top"></div>
+            <div class="auth-image-line auth-image-line-bottom"></div>
+        </div>
+
+
+
+        <!-- ПРАВАЯ ЧАСТЬ -->
+
+        <div class="auth-main">
+
+            <header class="auth-header">
+
+                <a href="index.html" class="auth-logo">
+                    <img src="images/logo.png" alt="Энергопрогноз">
+                </a>
+
+                <a href="index.html" class="auth-home">
+                    На главную
+                    <span>→</span>
+                </a>
+
+            </header>
+
+
+            <div class="auth-content">
+
+                <div class="auth-form-wrapper auth-register-wrapper">
+
+                    <h1>
+                        РЕГИСТРАЦИЯ<br>
+                        В ЛИЧНОМ КАБИНЕТЕ
+                    </h1>
+
+                    <p class="auth-intro">
+                        Создайте аккаунт, чтобы передавать показания,
+                        получать документы и управлять лицевым счетом.
+                    </p>
+
+
+                    <form class="auth-form" id="registerForm">
+
+
+                        <div class="auth-field">
+
+                            <label for="fullname">
+                                ФИО
+                            </label>
+
+                            <input
+                                id="fullname"
+                                type="text"
+                                placeholder="Иванова Анна Сергеевна"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="phone">
+                                Номер телефона
+                            </label>
+
+                            <input
+                                id="phone"
+                                type="tel"
+                                placeholder="+7 (___) ___-__-__"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="example@mail.ru"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="registerPassword">
+                                Пароль
+                            </label>
+
+                            <div class="password-field">
+
+                                <input
+                                    id="registerPassword"
+                                    type="password"
+                                    placeholder="Не менее 8 символов"
+                                    minlength="8"
+                                    required
+                                >
+
+                                <button
+                                    class="password-toggle"
+                                    type="button"
+                                    aria-label="Показать пароль"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="repeatPassword">
+                                Подтвердите пароль
+                            </label>
+
+                            <div class="password-field">
+
+                                <input
+                                    id="repeatPassword"
+                                    type="password"
+                                    placeholder="Повторите пароль"
+                                    minlength="8"
+                                    required
+                                >
+
+                                <button
+                                    class="password-toggle"
+                                    type="button"
+                                    aria-label="Показать пароль"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="auth-checkbox auth-agreement">
+
+                            <input
+                                id="agreement"
+                                type="checkbox"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Я согласен(а) с условиями
+                                <a href="#">обработки персональных данных</a>
+                                и
+                                <a href="#">пользовательским соглашением</a>
+                            </span>
+
+                        </label>
+
+
+                        <p class="auth-error" id="registerError"></p>
+
+
+                        <button class="auth-submit" type="submit">
+
+                            <span>Зарегистрироваться</span>
+                            <span>→</span>
+
+                        </button>
+
+
+                        <div class="auth-login-bottom">
+
+                            Уже есть аккаунт?
+
+                            <a href="login.html">
+                                Войти
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document.querySelectorAll(".password-toggle").forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const input = this.parentElement.querySelector("input");
+
+                input.type =
+                    input.type === "password"
+                        ? "text"
+                        : "password";
+
+            });
+
+        });
+
+
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const password =
+                document.getElementById("registerPassword").value;
+
+            const repeatPassword =
+                document.getElementById("repeatPassword").value;
+
+            const error =
+                document.getElementById("registerError");
+
+
+            if (password !== repeatPassword) {
+
+                error.textContent =
+                    "Пароли не совпадают.";
+
+                return;
+
+            }
+
+
+            error.textContent = "";
+
+            window.location.href = "account.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>

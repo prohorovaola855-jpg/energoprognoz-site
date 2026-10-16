@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Вход в личный кабинет — Энергопрогноз</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-page">
+
+        <!-- ЛЕВАЯ ФОТОГРАФИЯ -->
+
+        <div class="auth-image">
+            <img src="images/vxod.png" alt="Линии электропередачи">
+
+            <div class="auth-image-line auth-image-line-top"></div>
+            <div class="auth-image-line auth-image-line-bottom"></div>
+        </div>
+
+
+        <!-- ПРАВАЯ ЧАСТЬ -->
+
+        <div class="auth-main">
+
+            <header class="auth-header">
+
+                <a href="index.html" class="auth-logo">
+                    <img src="images/logo.png" alt="Энергопрогноз">
+                </a>
+
+                <a href="index.html" class="auth-home">
+                    На главную
+                    <span>→</span>
+                </a>
+
+            </header>
+
+
+            <div class="auth-content">
+
+                <div class="auth-form-wrapper">
+
+                    <h1>
+                        ВХОД<br>
+                        В ЛИЧНЫЙ КАБИНЕТ
+                    </h1>
+
+                    <p class="auth-intro">
+                        Управляйте услугами, передавайте показания
+                        и оплачивайте электроэнергию онлайн.
+                    </p>
+
+
+                    <form class="auth-form" id="loginForm">
+
+                        <div class="auth-field">
+
+                            <label for="login">
+                                Телефон или email
+                            </label>
+
+                            <input
+                                id="login"
+                                type="text"
+                                placeholder="Введите номер телефона или email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="password">
+                                Пароль
+                            </label>
+
+                            <div class="password-field">
+
+                                <input
+                                    id="password"
+                                    type="password"
+                                    placeholder="Введите пароль"
+                                    required
+                                >
+
+                                <button
+                                    class="password-toggle"
+                                    type="button"
+                                    aria-label="Показать пароль"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-options">
+
+                            <label class="auth-checkbox">
+
+                                <input type="checkbox">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span>
+                                    Запомнить меня
+                                </span>
+
+                            </label>
+
+
+                            <a href="#" class="auth-forgot">
+                                Забыли пароль?
+                            </a>
+
+                        </div>
+
+
+                        <button class="auth-submit" type="submit">
+
+                            <span>Войти</span>
+                            <span>→</span>
+
+                        </button>
+
+
+                        <div class="auth-divider">
+                            <span>или</span>
+                        </div>
+
+
+                        <a href="register.html" class="auth-register-button">
+                            Зарегистрироваться
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* показать / скрыть пароль */
+
+        document.querySelectorAll(".password-toggle").forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const input = this.parentElement.querySelector("input");
+
+                if (input.type === "password") {
+                    input.type = "text";
+                } else {
+                    input.type = "password";
+                }
+
+            });
+
+        });
+
+
+        /* пока демо-вход */
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            window.location.href = "account.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>
