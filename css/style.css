@@ -3728,3 +3728,425 @@ html.site-search-is-open {
 @media (prefers-reduced-motion: reduce) {
     .disclosure-menu-arrow .site-line-icon { transition: none; }
 }
+/* =========================================================
+   ОБРАТНАЯ СВЯЗЬ
+   ========================================================= */
+
+.contact-dialog {
+    width: min(720px, calc(100% - 32px));
+    max-height: 90vh;
+    max-height: 90dvh;
+
+    margin: auto;
+    padding: 30px;
+
+    overflow-y: auto;
+
+    border: 1px solid #ff710b;
+    border-radius: 12px;
+
+    background: #fdfaf5;
+    color: #1e1e1e;
+
+    font-family: "HelveticaCustom", Helvetica, Arial, sans-serif;
+}
+
+.contact-dialog::backdrop {
+    background: rgba(30, 30, 30, 0.55);
+}
+
+.contact-dialog *,
+.contact-dialog *::before,
+.contact-dialog *::after {
+    box-sizing: border-box;
+}
+
+.contact-dialog [hidden] {
+    display: none !important;
+}
+
+.contact-dialog :focus-visible {
+    outline: 3px solid #a34400;
+    outline-offset: 4px;
+}
+
+
+/* ВЕРХНЯЯ ЧАСТЬ */
+
+.contact-dialog-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.contact-dialog-top h2 {
+    display: table;
+
+    max-width: 100%;
+    margin: 0;
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #ff710b;
+
+    font-family: "UNCAGE", Arial, sans-serif;
+    font-size: var(--section-heading-size, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.contact-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+    margin-top: -8px;
+    padding: 10px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #1e1e1e;
+
+    cursor: pointer;
+}
+
+.contact-close:hover {
+    background: rgba(255, 113, 11, 0.06);
+}
+
+.contact-close svg,
+.contact-topic-card svg {
+    display: block;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ТЕМЫ ОБРАЩЕНИЙ */
+
+.contact-topics {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+}
+
+.contact-topics legend {
+    margin-bottom: 14px;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.contact-topic {
+    position: relative;
+    min-width: 0;
+
+    cursor: pointer;
+}
+
+/* Радиокнопка доступна с клавиатуры. */
+
+.contact-topic > input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+
+    opacity: 0;
+}
+
+.contact-topic-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    height: 100%;
+    min-height: 160px;
+    padding: 18px 12px;
+
+    border: 1px solid #d4d0ca;
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.contact-topic-card svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.contact-topic-card strong {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.contact-topic-card > span {
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: #737373;
+}
+
+.contact-topic input:checked + .contact-topic-card {
+    border-color: #ff710b;
+    background: rgba(255, 113, 11, 0.05);
+}
+
+.contact-topic input:checked + .contact-topic-card svg {
+    color: #ff710b;
+}
+
+.contact-topic input:focus-visible + .contact-topic-card {
+    outline: 3px solid #a34400;
+    outline-offset: 3px;
+}
+
+
+/* ЗАГОЛОВОК ФОРМЫ */
+
+.contact-form-heading {
+    margin: 24px 0 20px;
+    padding-top: 22px;
+
+    border-top: 1px solid #e5dfd8;
+}
+
+.contact-form-heading h3 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.contact-form-heading p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #737373;
+}
+
+
+/* ПОЛЯ */
+
+.contact-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    min-width: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-field-wide {
+    grid-column: 1 / -1;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 12px;
+
+    border: 1px solid #d4d0ca;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #1e1e1e;
+
+    font: inherit;
+    font-size: 16px;
+}
+
+.contact-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: #ff710b;
+}
+
+
+/* ФАЙЛ И СОГЛАСИЕ */
+
+.contact-attachment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-attachment > span {
+    color: #bd4c00;
+}
+
+.contact-attachment input {
+    max-width: 100%;
+    font: inherit;
+}
+
+.contact-attachment input::file-selector-button {
+    margin-right: 10px;
+    padding: 8px 12px;
+
+    border: 1px solid #ff710b;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #1e1e1e;
+
+    font: inherit;
+    cursor: pointer;
+}
+
+.contact-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.contact-consent input {
+    flex: 0 0 18px;
+
+    width: 18px;
+    height: 18px;
+    margin: 1px 0 0;
+
+    accent-color: #ff710b;
+}
+
+
+/* ОТПРАВКА */
+
+.contact-status {
+    margin: 16px 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-status:empty {
+    display: none;
+}
+
+.contact-submit {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 20px;
+    padding: 12px 20px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #ff710b;
+    color: #fff;
+
+    font: inherit;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.contact-submit:hover:not(:disabled) {
+    background: #d65a00;
+}
+
+.contact-submit:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 600px) {
+
+    .contact-dialog {
+        width: calc(100% - 24px);
+        padding: 20px;
+    }
+
+    .contact-dialog-top h2 {
+        font-size: 21px;
+    }
+
+    .contact-topics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .contact-topic-card {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 4px 12px;
+
+        min-height: 0;
+        padding: 14px;
+
+        text-align: left;
+    }
+
+    .contact-topic-card svg {
+        grid-row: 1 / 3;
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact-topic-card > span {
+        grid-column: 2;
+    }
+
+    .contact-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}
