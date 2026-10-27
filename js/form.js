@@ -1,129 +1,192 @@
-(() => {
-    "use strict";
+function initContactForm() {
+    const dialog = document.getElementById("contact-dialog");
+    const form = document.getElementById("contact-form");
 
-    function initContact() {
-        const dialog = document.getElementById("contact-dialog");
-        const form = document.getElementById("contact-form");
+    if (!dialog || !form) return;
 
-        if (!dialog || !form) return;
+    const submit = form.querySelector('[type="submit"]');
+    const status = form.querySelector(".contact-status");
+    const title = document.getElementById("contact-form-title");
+    const description = document.getElementById("contact-form-description");
+    const company = document.getElementById("contact-company-field");
+    const contract = document.getElementById("contact-contract-field");
 
-        const title = document.getElementById("contact-form-title");
-        const description = document.getElementById(
-            "contact-form-description"
-        );
+    let previousFocus;
+    let sending = false;
 
-        const company = document.getElementById("contact-company-field");
-        const contract = document.getElementById("contact-contract-field");
-        const status = form.querySelector(".contact-status");
-        const submit = form.querySelector(".contact-submit");
-        const attachment = form.querySelector('[name="attachment"]');
+    const topics = {
+        "new-client": {
+            title: "Обсудим сотрудничество",
+            description: "Расскажите о вашей организации и задаче.",
+            label: "Стать клиентом",
+            company: true,
+            contract: false
+        },
 
-        let opener = null;
+        "existing-client": {
+            title: "Поможем с вашим вопросом",
+            description: "Укажите номер договора, если он есть.",
+            label: "Я уже клиент",
+            company: true,
+            contract: true
+        },
 
-        const topics = {
-            "new-client": {
-                title: "Обсудим сотрудничество",
-                description: "Расскажите о вашей организации и задаче.",
-                company: true,
-                contract: false
-            },
-            "existing-client": {
-                title: "Поможем с вашим вопросом",
-                description: "Укажите организацию и опишите обращение.",
-                company: true,
-                contract: true
-            },
-            "other": {
-                title: "Напишите нам",
-                description: "Оставьте сообщение и контакты для ответа.",
-                company: false,
-                contract: false
-            }
-        };
+        "other": {
+            title: "Напишите нам",
+            description: "Оставьте ваш вопрос или предложение.",
+            label: "Другой вопрос",
+            company: false,
+            contract: false
+        }
+    };
 
-        function updateTopic() {
-            const selected = form.querySelector(
-                '[name="topic"]:checked'
-            );
+    function toggleField(field, visible) {
+        if (!field) return;
 
-            const settings = topics[selected.value];
+        field.hidden = !visible;
 
-            title.textContent = settings.title;
-            description.textContent = settings.description;
+        field.querySelectorAll("input").forEach(input => {
+            input.disabled = !visible;
+        });
+    }
 
-            company.hidden = !settings.company;
-            company.querySelector("input").disabled = !settings.company;
+    function updateTopic() {
+        const selected = form.querySelector('[name="topic"]:checked');
+        const settings = topics[selected?.value] || topics["new-client"];
 
-            contract.hidden = !settings.contract;
-            contract.querySelector("input").disabled = !settings.contract;
+        if (title) title.textContent = settings.title;
+        if (description) description.textContent = settings.description;
+
+        toggleField(company, settings.company);
+        toggleField(contract, settings.contract);
+    }
+
+    form.querySelectorAll('[name="topic"]').forEach(input => {
+        input.addEventListener("change", updateTopic);
+    });
+
+    document.querySelectorAll(
+        ".contact-button, .hero-button, .service-button, " +
+        ".business-contact-button, [data-open-contact]"
+    ).forEach(button => {
+        button.addEventListener("click", event => {
+            event.preventDefault();
+            previousFocus = document.activeElement;
+
+            if (!dialog.open) dialog.showModal();
+        });
+    });
+
+    dialog.querySelector(".contact-close")?.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    dialog.addEventListener("click", event => {
+        if (event.target !== dialog) return;
+
+        const rect = dialog.getBoundingClientRect();
+
+        if (
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom
+        ) {
+            dialog.close();
+        }
+    });
+
+    dialog.addEventListener("close", () => {
+        previousFocus?.focus();
+    });
+
+    /* Пока подключаем отправку только текстовых данных. */
+    const attachment = form.querySelector('[name="attachment"]');
+
+    if (attachment) {
+        attachment.disabled = true;
+
+        const attachmentBlock = attachment.closest(".contact-attachment");
+        if (attachmentBlock) attachmentBlock.hidden = true;
+    }
+
+    /* Удаляем настройки предыдущего сервиса. */
+    form.querySelectorAll(
+        '[name="_subject"], [name="_template"], ' +
+        '[name="_next"], [name="_captcha"]'
+    ).forEach(input => input.remove());
+
+    form.action = "https://formspree.io/f/xdeegbkb";
+    form.method = "POST";
+
+    if (submit) submit.disabled = false;
+    updateTopic();
+
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        if (sending || !form.reportValidity()) return;
+
+        sending = true;
+
+        if (submit) {
+            submit.disabled = true;
+            submit.textContent = "Отправляем…";
         }
 
-        document.querySelectorAll(
-            ".contact-button, .hero-button, .service-button, " +
-            ".business-contact-button, [data-open-contact]"
-        ).forEach((button) => {
-            button.addEventListener("click", (event) => {
-                event.preventDefault();
-                opener = button;
-                status.textContent = "";
+        if (status) status.textContent = "Отправляем обращение…";
 
-                if (!dialog.open) dialog.showModal();
+        const data = new FormData(form);
+        const selected = form.querySelector('[name="topic"]:checked');
+
+        data.set(
+            "topic",
+            topics[selected?.value]?.label || "Обращение с сайта"
+        );
+
+        data.delete("attachment");
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: {
+                    Accept: "application/json"
+                }
             });
-        });
 
-        dialog.querySelector(".contact-close").addEventListener(
-            "click",
-            () => dialog.close()
-        );
-
-        dialog.addEventListener("close", () => opener?.focus());
-
-        dialog.addEventListener("click", (event) => {
-            if (event.target !== dialog) return;
-
-            const rect = dialog.getBoundingClientRect();
-
-            if (
-                event.clientX < rect.left ||
-                event.clientX > rect.right ||
-                event.clientY < rect.top ||
-                event.clientY > rect.bottom
-            ) {
-                dialog.close();
+            if (!response.ok) {
+                throw new Error("Сервис не принял обращение");
             }
-        });
 
-        form.querySelectorAll('[name="topic"]').forEach((input) => {
-            input.addEventListener("change", updateTopic);
-        });
+            form.reset();
+            updateTopic();
 
-        // Вложения — не более 10 МБ.
-        attachment.addEventListener("change", () => {
-            const file = attachment.files[0];
+            if (status) {
+                status.textContent =
+                    "Обращение принято! Мы свяжемся с вами " +
+                    "по указанным контактам.";
+            }
+        } catch {
+            if (status) {
+                status.textContent =
+                    "Не удалось отправить обращение. " +
+                    "Проверьте интернет и попробуйте ещё раз. " +
+                    "Введённые данные сохранены.";
+            }
+        } finally {
+            sending = false;
 
-            attachment.setCustomValidity(
-                file && file.size > 10 * 1024 * 1024
-                    ? "Выберите файл размером не более 10 МБ."
-                    : ""
-            );
+            if (submit) {
+                submit.disabled = false;
+                submit.textContent = "Отправить";
+            }
+        }
+    });
+}
 
-            attachment.reportValidity();
-        });
-
-        // Отправку выполняет сама HTML-форма.
-        // Здесь больше нет блокировки или перехвата через fetch.
-        submit.disabled = false;
-
-        updateTopic();
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            initContact,
-            { once: true }
-        );
-    } else {
-        initContact();
-    }
-})();
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactForm);
+} else {
+    initContactForm();
+}
