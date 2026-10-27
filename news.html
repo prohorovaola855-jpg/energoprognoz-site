@@ -5,9 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>О компании — Энергопрогноз</title>
+    <title>Новости — Энергопрогноз</title>
 
     <link rel="stylesheet" href="css/style.css?v=20261016-mobile3">
+    <style>
+        /* Временное сообщение раздела. Заголовок — из общих стилей сайта. */
+        .consumers-pending { min-height: 45vh; }
+        .consumers-pending__notice {
+            margin: 24px 0 48px;
+            padding: 20px 24px;
+            border-left: 4px solid #ff710b;
+            border-radius: 0 10px 10px 0;
+            background: rgba(255, 113, 11, 0.045);
+        }
+        .consumers-pending .consumers-pending__notice p {
+            margin: 0;
+            color: #1e1e1e;
+            font-size: inherit;
+            line-height: 1.65;
+        }
+        @media (max-width: 600px) {
+            .consumers-pending__notice {
+                margin: 20px 0 32px;
+                padding: 16px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -35,14 +58,7 @@
                     </svg>
                 </button>
 
-                 <a href="login.html"
-                     class="icon-button account-button"
-                     aria-label="Личный кабинет">
-                    <svg viewBox="0 0 32 32">
-                        <circle cx="16" cy="9" r="6"></circle>
-                        <path d="M5 30C5 22 9 19 16 19C23 19 27 22 27 30"></path>
-                    </svg>
-                </a>
+                
 
                 <a href="#contacts" class="contact-button">
                     Свяжитесь с нами
@@ -62,192 +78,67 @@
 
     </div>
 </header>
-<main class="news-page" id="main-content">
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="business-page consumers-pending">
     <div class="container">
-
-        <!-- ХЛЕБНЫЕ КРОШКИ -->
-
-        <nav class="news-breadcrumbs" aria-label="Хлебные крошки">
+        <nav class="business-breadcrumbs" aria-label="Хлебные крошки">
             <a href="index.html">Главная страница</a>
-
-            <span
-                class="news-breadcrumb-divider"
-                aria-hidden="true"
-            ></span>
-
+            <span aria-hidden="true">—</span>
             <span aria-current="page">Новости</span>
         </nav>
-
-
-        <!-- ЗАГОЛОВОК -->
-
-        <h1 class="news-page-title">Новости</h1>
-
-
-        <!-- СПИСОК НОВОСТЕЙ -->
-
-        <div class="news-list">
-
-            <!-- НОВОСТЬ 1 -->
-
-            <article class="news-item" aria-labelledby="news-title-1">
-
-                <!--
-                    Когда появится фотография, замени серую заглушку на:
-
-                    <img
-                        class="news-image"
-                        src="images/news/news-1.jpg"
-                        alt="Вставить описание фотографии"
-                        width="1200"
-                        height="390"
-                        loading="lazy"
-                    >
-                -->
-
-                <img
-    class="news-image"
-    src="images/news/news-1.jpg"
-    alt="Описание того, что изображено на фотографии"
-    width="1200"
-    height="390"
-    loading="lazy"
->
-
-                <div class="news-heading">
-                    <h2 class="news-item-title" id="news-title-1">
-                        Вставить название
-                    </h2>
-
-                    <!--
-                        После заполнения даты используй:
-                        <time class="news-date" datetime="2026-09-21">
-                            21/09/2026
-                        </time>
-                    -->
-
-                    <span class="news-date">Вставить дату</span>
-                </div>
-
-                <div class="news-text">
-                    <p>
-                        Вставить текст новости. Здесь можно рассказать
-                        о событии, его участниках и основных результатах.
-                    </p>
-
-                    <p>
-                        Вставить дополнительную информацию при необходимости.
-                    </p>
-                </div>
-
-                <p class="news-location">Вставить город</p>
-
-            </article>
-
-
-            <!-- НОВОСТЬ 2 -->
-
-            <article class="news-item" aria-labelledby="news-title-2">
-
-                <!--
-                    Замени заглушку на изображение:
-
-                    <img
-                        class="news-image"
-                        src="images/news/news-2.jpg"
-                        alt="Вставить описание фотографии"
-                        width="1200"
-                        height="390"
-                        loading="lazy"
-                    >
-                -->
-
-                <img
-    class="news-image"
-    src="images/news/news-1.jpg"
-    alt="Описание того, что изображено на фотографии"
-    width="1200"
-    height="390"
-    loading="lazy"
->
-
-                <div class="news-heading">
-                    <h2 class="news-item-title" id="news-title-2">
-                        Вставить название
-                    </h2>
-
-                    <span class="news-date">Вставить дату</span>
-                </div>
-
-                <div class="news-text">
-                    <p>
-                        Вставить текст новости. Здесь можно рассказать
-                        о событии, его участниках и основных результатах.
-                    </p>
-
-                    <p>
-                        Вставить дополнительную информацию при необходимости.
-                    </p>
-                </div>
-
-                <p class="news-location">Вставить город</p>
-
-            </article>
-
-
-            <!-- НОВОСТЬ 3 -->
-
-            <article class="news-item" aria-labelledby="news-title-3">
-
-                <!--
-                    Замени заглушку на изображение:
-
-                    <img
-                        class="news-image"
-                        src="images/news/news-3.jpg"
-                        alt="Вставить описание фотографии"
-                        width="1200"
-                        height="390"
-                        loading="lazy"
-                    >
-                -->
-
-                <img
-    class="news-image"
-    src="images/news/news-1.jpg"
-    alt="Описание того, что изображено на фотографии"
-    width="1200"
-    height="390"
-    loading="lazy"
->
-
-                <div class="news-heading">
-                    <h2 class="news-item-title" id="news-title-3">
-                        Вставить название
-                    </h2>
-
-                    <span class="news-date">Вставить дату</span>
-                </div>
-
-                <div class="news-text">
-                    <p>
-                        Вставить текст новости. Здесь можно рассказать
-                        о событии, его участниках и основных результатах.
-                    </p>
-
-                    <p>
-                        Вставить дополнительную информацию при необходимости.
-                    </p>
-                </div>
-
-                <p class="news-location">Вставить город</p>
-
-            </article>
-
-        </div>
-
+        <section class="business-intro" aria-labelledby="consumers-title">
+            <h1 id="consumers-title">Новости</h1>
+            <div class="consumers-pending__notice">
+                <p>Позже здесь появится информация.</p>
+            </div>
+        </section>
     </div>
 </main>
+
+
+<script>
+    // Открываем нужный раздел при переходе по ссылке с якорем.
+
+    function openBusinessSection() {
+        const sectionId = window.location.hash.slice(1);
+        const section = document.getElementById(sectionId);
+
+        if (section && section.matches("details.business-item")) {
+            section.open = true;
+        }
+    }
+
+    document
+        .querySelectorAll('.business-page a[href^="#"]')
+        .forEach(function (link) {
+            link.addEventListener("click", function () {
+                const sectionId = link.getAttribute("href").slice(1);
+                const section = document.getElementById(sectionId);
+
+                if (section && section.matches("details.business-item")) {
+                    section.open = true;
+                }
+            });
+        });
+
+    window.addEventListener("hashchange", openBusinessSection);
+
+    openBusinessSection();
+</script>
+
+
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer class="footer" id="contacts">
     <div class="footer-container">
 
@@ -261,7 +152,7 @@
             <a href="about.html">О компании</a>
             <a href="services.html">Услуги</a>
             <a href="consumers.html">Потребителям</a>
-            <a href="consumers.html">Раскрытие информации</a>
+            <a href="disclosure.html">Раскрытие информации</a>
             <a href="news.html">Новости</a>
             <a href="contacts.html">Контакты</a>
         </nav>
@@ -298,6 +189,312 @@
 
     </div>
 </footer>
+
+
+
+<!-- =====================================================
+     ACCORDION
+===================================================== -->
+
+<script>
+
+document.querySelectorAll(".consumer-header").forEach(header => {
+
+    header.addEventListener("click", function () {
+
+        const item = this.closest(".consumer-item");
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+document.querySelectorAll(".faq-question").forEach(question => {
+
+    question.addEventListener("click", function () {
+
+        const item = this.closest(".faq-item");
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+</script>
+
 <script src="js/search.js?v=20261016-mobile3"></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/contact.js?v=1" defer></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/form.js" defer></script>
 </body>
 </html>

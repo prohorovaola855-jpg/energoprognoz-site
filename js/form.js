@@ -2,7 +2,8 @@ function initContactForm() {
     const dialog = document.getElementById("contact-dialog");
     const form = document.getElementById("contact-form");
 
-    if (!dialog || !form) return;
+    if (!dialog || !form || form.dataset.initialized === "true") return;
+    form.dataset.initialized = "true";
 
     const submit = form.querySelector('[type="submit"]');
     const status = form.querySelector(".contact-status");
@@ -121,6 +122,10 @@ function initContactForm() {
 
     if (submit) submit.disabled = false;
     updateTopic();
+    if (status) status.textContent = "Заполните обязательные поля и нажмите «Отправить».";
+    form.addEventListener("invalid", () => {
+        if (status) status.textContent = "Заполните имя, телефон или email, сообщение и отметьте согласие на обработку данных.";
+    }, true);
 
     form.addEventListener("submit", async event => {
         event.preventDefault();
@@ -146,17 +151,26 @@ function initContactForm() {
 
         data.delete("attachment");
 
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+
         try {
             const response = await fetch(form.action, {
                 method: "POST",
                 body: data,
+                signal: controller.signal,
                 headers: {
                     Accept: "application/json"
                 }
             });
 
             if (!response.ok) {
-                throw new Error("Сервис не принял обращение");
+                const result = await response.json().catch(() => ({}));
+                const details = Array.isArray(result.errors)
+                    ? result.errors.map(item => item.message).filter(Boolean).join("; ")
+                    : "";
+                throw new Error("Formspree: ошибка " + response.status +
+                    (details ? ". " + details : ". Проверьте активацию формы и настройки получателя в Formspree."));
             }
 
             form.reset();
@@ -167,14 +181,17 @@ function initContactForm() {
                     "Обращение принято! Мы свяжемся с вами " +
                     "по указанным контактам.";
             }
-        } catch {
+        } catch (error) {
             if (status) {
-                status.textContent =
-                    "Не удалось отправить обращение. " +
-                    "Проверьте интернет и попробуйте ещё раз. " +
-                    "Введённые данные сохранены.";
+                const reason = error.name === "AbortError"
+                    ? "Сервис не ответил за 20 секунд. Проверьте соединение."
+                    : error.message.startsWith("Formspree:")
+                        ? error.message
+                        : "Не удалось подключиться к Formspree. Проверьте, открывается ли formspree.io в этом браузере.";
+                status.textContent = reason + " Данные сохранены. Если ответ сервиса потерялся, проверьте заявку в Formspree перед повторной отправкой.";
             }
         } finally {
+            clearTimeout(timeout);
             sending = false;
 
             if (submit) {

@@ -8,6 +8,29 @@
     <title>Потребителям — Энергопрогноз</title>
 
     <link rel="stylesheet" href="css/style.css?v=20261016-mobile3">
+    <style>
+        /* Временное сообщение раздела. Заголовок — из общих стилей сайта. */
+        .consumers-pending { min-height: 45vh; }
+        .consumers-pending__notice {
+            margin: 24px 0 48px;
+            padding: 20px 24px;
+            border-left: 4px solid #ff710b;
+            border-radius: 0 10px 10px 0;
+            background: rgba(255, 113, 11, 0.045);
+        }
+        .consumers-pending .consumers-pending__notice p {
+            margin: 0;
+            color: #1e1e1e;
+            font-size: inherit;
+            line-height: 1.65;
+        }
+        @media (max-width: 600px) {
+            .consumers-pending__notice {
+                margin: 20px 0 32px;
+                padding: 16px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -35,14 +58,6 @@
                     </svg>
                 </button>
 
-                 <a href="login.html"
-                     class="icon-button account-button"
-                     aria-label="Личный кабинет">
-                    <svg viewBox="0 0 32 32">
-                        <circle cx="16" cy="9" r="6"></circle>
-                        <path d="M5 30C5 22 9 19 16 19C23 19 27 22 27 30"></path>
-                    </svg>
-                </a>
 
                 <a href="#contacts" class="contact-button">
                     Свяжитесь с нами
@@ -68,1404 +83,19 @@
      MAIN
 ===================================================== -->
 
-<main class="business-page">
+<main class="business-page consumers-pending">
     <div class="container">
-
         <nav class="business-breadcrumbs" aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a>
+            <a href="index.html">Главная страница</a>
             <span aria-hidden="true">—</span>
-            <a href="consumers.html">Потребителям</a>
-           
-
+            <span aria-current="page">Потребителям</span>
         </nav>
-
-        <div class="business-intro">
-            <h1>Юридическим лицам</h1>
-            <p>
-                Вся информация об энергоснабжении вашей организации.
-            </p>
-        </div>
-
-
-        <!-- БЫСТРЫЕ ПЕРЕХОДЫ -->
-
-        <nav class="business-quick" aria-label="Быстрые действия">
-
-            <a href="#contract">
-                <span class="business-quick-number">01</span>
-                <span>Заключить договор</span>
-                <span class="business-link-arrow" aria-hidden="true"><svg class="site-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
-            </a>
-
-            <a href="#metering">
-                <span class="business-quick-number">02</span>
-                <span>Передать показания</span>
-                <span class="business-link-arrow" aria-hidden="true"><svg class="site-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
-            </a>
-
-            <a href="#requests">
-                <span class="business-quick-number">03</span>
-                <span>Направить обращение</span>
-                <span class="business-link-arrow" aria-hidden="true"><svg class="site-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
-            </a>
-
-        </nav>
-
-
-        <!-- ИНФОРМАЦИОННЫЕ РАЗДЕЛЫ -->
-<!-- =====================================================
-     ИНФОРМАЦИЯ ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ
-===================================================== -->
-
-        <section
-            class="business-accordion"
-            aria-label="Информация для юридических лиц"
-        >
-
-            <!-- =========================================
-                 01. ЗАКЛЮЧЕНИЕ ДОГОВОРА
-            ========================================= -->
-
-            <details class="business-item" id="contract" open>
-
-                <summary>
-                    <span class="business-number">01</span>
-
-                    <h2>Как заключить договор?</h2>
-
-                    <span class="business-description">
-                        Заявление, способы подачи
-                        и оформление договора
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Для заключения договора подготовьте заявление,
-                        сведения об организации и документы по объекту
-                        энергоснабжения. Укажите адрес объекта,
-                        предполагаемую дату начала поставки
-                        и контакт ответственного сотрудника.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Порядок оформления</h3>
-
-                            <ol>
-                                <li>
-                                    Выберите комплект документов
-                                    для своей категории потребителя.
-                                </li>
-
-                                <li>
-                                    Заполните заявление
-                                    и подготовьте приложения.
-                                </li>
-
-                                <li>
-                                    Направьте комплект документов
-                                    выбранным способом.
-                                </li>
-
-                                <li>
-                                    Проверьте сведения об организации,
-                                    объектах и точках поставки
-                                    в проекте договора.
-                                </li>
-
-                                <li>
-                                    Согласуйте условия
-                                    и подпишите договор.
-                                </li>
-                            </ol>
-                        </div>
-
-                        <div>
-                            <h3>Способы подачи заявления</h3>
-
-                            <ul>
-                                <li>
-                                    Электронная почта:
-                                    [ЗАПОЛНИТЬ: адрес для заявлений].
-                                </li>
-
-                                <li>
-                                    Почтовое отправление:
-                                    [ЗАПОЛНИТЬ: почтовый адрес].
-                                </li>
-
-                                <li>
-                                    Личная подача:
-                                    [ЗАПОЛНИТЬ: адрес и часы приёма].
-                                </li>
-
-                                <li>
-                                    Через ЭДО:
-                                    [ЗАПОЛНИТЬ: доступные операторы
-                                    и идентификатор компании].
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <aside class="business-note">
-                        При обращении через представителя приложите
-                        документ, подтверждающий его полномочия.
-                        Сохраните копию заявления
-                        и подтверждение его передачи.
-                    </aside>
-
-                    <div class="business-links">
-
-                        <a
-                            href="documents/zayavlenie-na-dogovor.docx"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <span>
-                                Заявление на заключение договора
-                            </span>
-                        </a>
-
-                        <a
-                            href="documents/perechen-dokumentov.pdf"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <span>Перечень документов</span>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 02. ФОРМЫ И ДОКУМЕНТЫ
-            ========================================= -->
-
-            <details class="business-item" id="documents">
-
-                <summary>
-                    <span class="business-number">02</span>
-
-                    <h2>Формы договоров и документы</h2>
-
-                    <span class="business-description">
-                        Оформление договора
-                        и изменение сведений
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Комплект документов зависит от категории
-                        потребителя и условий поставки. Используйте
-                        форму договора и перечень приложений,
-                        соответствующие вашей организации.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Категории потребителей</h3>
-
-                            <!--
-                                Перед публикацией оставить только
-                                обслуживаемые компанией категории.
-                            -->
-
-                            <ul>
-                                <li>
-                                    Коммерческие организации
-                                    и индивидуальные предприниматели.
-                                </li>
-
-                                <li>Бюджетные учреждения.</li>
-
-                                <li>Энергосбытовые организации.</li>
-
-                                <li>Сетевые организации.</li>
-
-                                <li>
-                                    Исполнители коммунальных услуг.
-                                </li>
-
-                                <li>
-                                    Потребители, приравненные
-                                    к населению.
-                                </li>
-
-                                <li>
-                                    Владельцы объектов микрогенерации.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Изменение договора</h3>
-
-                            <ul>
-                                <li>
-                                    Изменение наименования,
-                                    реквизитов и контактов.
-                                </li>
-
-                                <li>
-                                    Включение или исключение
-                                    объектов энергоснабжения.
-                                </li>
-
-                                <li>
-                                    Изменение владельца
-                                    или пользователя объекта.
-                                </li>
-
-                                <li>
-                                    Обновление сведений
-                                    о приборах учёта.
-                                </li>
-
-                                <li>
-                                    Оформление дополнительных
-                                    соглашений.
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <h3>Документы для скачивания</h3>
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/zayavlenie-na-dogovor.docx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <div>
-                                <strong>
-                                    Заявление на заключение договора
-                                </strong>
-                                <small>Скачать DOCX</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/perechen-dokumentov.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Перечень документов
-                                    для юридических лиц
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/dogovor-s-prilozheniyami.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Форма договора с приложениями
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/izmenenie-rekvizitov.docx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <div>
-                                <strong>
-                                    Заявление об изменении реквизитов
-                                </strong>
-                                <small>Скачать DOCX</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 03. ЦЕНЫ И РАСЧЁТЫ
-            ========================================= -->
-
-            <details class="business-item" id="prices">
-
-                <summary>
-                    <span class="business-number">03</span>
-
-                    <h2>Тарифы, цены и расчёты</h2>
-
-                    <span class="business-description">
-                        Стоимость электроэнергии
-                        и расчётные материалы
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Здесь размещаются ценовые материалы
-                        по расчётным периодам и пояснения
-                        к определению стоимости электроэнергии.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Условия расчёта стоимости</h3>
-
-                            <ul>
-                                <li>Категория потребителя.</li>
-
-                                <li>
-                                    Вид договора
-                                    и состав включённых услуг.
-                                </li>
-
-                                <li>
-                                    Ценовая категория
-                                    и характеристики учёта.
-                                </li>
-
-                                <li>
-                                    Объём потребления
-                                    за расчётный период.
-                                </li>
-
-                                <li>
-                                    Уровень напряжения
-                                    и параметры поставки.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Оплата и документы</h3>
-
-                            <p>
-                                Порядок оплаты:
-                                [ЗАПОЛНИТЬ: график
-                                и условия платежей].
-                            </p>
-
-                            <p>
-                                Получение счетов
-                                и закрывающих документов:
-                                [ЗАПОЛНИТЬ: способы доставки].
-                            </p>
-
-                            <p>
-                                Для сверки укажите номер договора
-                                и проверяемый период.
-                                При вопросе по начислениям
-                                приложите спорный документ
-                                и описание расхождения.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <h3>Расчётные материалы</h3>
-
-                    <!--
-                        Для каждого нового месяца создать отдельный
-                        файл и обновить название соответствующей карточки.
-                    -->
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/tseny-2026-10.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Цены за октябрь 2026 года
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/poryadok-rascheta-stoimosti.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Пояснения к расчёту стоимости
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/arhiv-tsen-2026.zip"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >ZIP</span>
-
-                            <div>
-                                <strong>
-                                    Архив ценовых материалов
-                                    за 2026 год
-                                </strong>
-                                <small>Скачать ZIP</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/zapros-akta-sverki.docx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <div>
-                                <strong>Запрос акта сверки</strong>
-                                <small>Скачать DOCX</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 04. УЧЁТ ЭЛЕКТРОЭНЕРГИИ
-            ========================================= -->
-
-            <details class="business-item" id="metering">
-
-                <summary>
-                    <span class="business-number">04</span>
-
-                    <h2>Учёт электроэнергии</h2>
-
-                    <span class="business-description">
-                        Сроки, способы передачи
-                        и формы отчётов
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Сроки передачи</h3>
-
-                            <p>
-                                Обычные объекты:
-                                [ЗАПОЛНИТЬ: период передачи].
-                            </p>
-
-                            <p>
-                                Объекты в многоквартирных домах:
-                                [ЗАПОЛНИТЬ: применимый период].
-                            </p>
-
-                            <h3>Способы передачи</h3>
-
-                            <ul>
-                                <li>
-                                    Электронная почта:
-                                    [ЗАПОЛНИТЬ: адрес
-                                    приёма показаний].
-                                </li>
-
-                                <li>
-                                    Ответственному по договору:
-                                    [ЗАПОЛНИТЬ: канал связи].
-                                </li>
-
-                                <li>
-                                    Через ЭДО:
-                                    [ЗАПОЛНИТЬ: условия отправки].
-                                </li>
-
-                                <li>
-                                    На бумажном носителе:
-                                    [ЗАПОЛНИТЬ: место приёма].
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Содержание отчёта</h3>
-
-                            <ul>
-                                <li>
-                                    Организация и номер договора.
-                                </li>
-
-                                <li>Объект и точка учёта.</li>
-
-                                <li>Заводской номер счётчика.</li>
-
-                                <li>Дата снятия показаний.</li>
-
-                                <li>
-                                    Значения по используемым
-                                    тарифным зонам.
-                                </li>
-
-                                <li>
-                                    Контакты сотрудника,
-                                    подготовившего отчёт.
-                                </li>
-                            </ul>
-
-                            <p>
-                                Для каждого прибора
-                                заполняйте отдельную строку.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <h3>Исправление данных</h3>
-
-                    <p>
-                        Укажите дату первоначальной передачи,
-                        номер прибора, ошибочное
-                        и правильное значения. При замене счётчика
-                        приложите имеющийся документ о замене
-                        и начальные показания нового прибора.
-                    </p>
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/shablon-pokazaniy.xlsx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >XLS</span>
-
-                            <div>
-                                <strong>
-                                    Шаблон передачи показаний
-                                </strong>
-                                <small>Скачать XLSX</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/instruktsiya-po-pokazaniyam.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Инструкция по заполнению отчёта
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 05. ЭДО
-            ========================================= -->
-
-            <details class="business-item" id="edo">
-
-                <summary>
-                    <span class="business-number">05</span>
-
-                    <h2>Электронный документооборот</h2>
-
-                    <span class="business-description">
-                        Подключение, подписание
-                        и получение документов
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Электронный документооборот позволяет
-                        отправлять, получать и подписывать документы
-                        без пересылки бумажных экземпляров.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Порядок подключения</h3>
-
-                            <ol>
-                                <li>
-                                    Подготовьте необходимую
-                                    электронную подпись.
-                                </li>
-
-                                <li>
-                                    Проверьте полномочия подписанта.
-                                </li>
-
-                                <li>
-                                    Зарегистрируйте организацию
-                                    у поддерживаемого оператора.
-                                </li>
-
-                                <li>
-                                    Направьте приглашение компании
-                                    по её реквизитам в ЭДО.
-                                </li>
-
-                                <li>
-                                    После подтверждения согласуйте
-                                    начало обмена.
-                                </li>
-                            </ol>
-                        </div>
-
-                        <div>
-                            <h3>Реквизиты для приглашения</h3>
-
-                            <p>
-                                Организация: ООО «Энергопрогноз».
-                            </p>
-
-                            <p>
-                                ИНН:
-                                [ЗАПОЛНИТЬ: ИНН компании].
-                            </p>
-
-                            <p>
-                                Операторы:
-                                [ЗАПОЛНИТЬ: поддерживаемые системы].
-                            </p>
-
-                            <p>
-                                Идентификатор:
-                                [ЗАПОЛНИТЬ: идентификатор ЭДО].
-                            </p>
-
-                            <p>
-                                Контакт по подключению:
-                                [ЗАПОЛНИТЬ: почта или телефон].
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <h3>Состав обмена</h3>
-
-                    <p>
-                        Перечень может включать счета,
-                        передаточные документы, акты сверки,
-                        заявления и договорные документы.
-                        Конкретный состав и порядок подписания
-                        закрепляются в условиях обмена.
-                    </p>
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/instruktsiya-edo.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Инструкция по подключению ЭДО
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/usloviya-edo.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Условия электронного обмена
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 06. НОРМАТИВНАЯ БАЗА
-            ========================================= -->
-
-            <details class="business-item" id="rules">
-
-                <summary>
-                    <span class="business-number">06</span>
-
-                    <h2>Нормативно-правовая база</h2>
-
-                    <span class="business-description">
-                        Документы по поставке,
-                        учёту и взаимодействию
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Раздел объединяет нормативные материалы
-                        и документы компании, используемые
-                        при заключении и исполнении договоров.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Нормативные материалы</h3>
-
-                            <ul>
-                                <li>
-                                    Работа розничных рынков
-                                    электроэнергии.
-                                </li>
-
-                                <li>
-                                    Передача электроэнергии
-                                    и технологическое присоединение.
-                                </li>
-
-                                <li>
-                                    Коммерческий учёт электроэнергии.
-                                </li>
-
-                                <li>
-                                    Полное и частичное
-                                    ограничение потребления.
-                                </li>
-
-                                <li>
-                                    Электронная подпись
-                                    и обмен документами.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Документы компании</h3>
-
-                            <ul>
-                                <li>Формы договоров.</li>
-
-                                <li>
-                                    Приложения
-                                    и дополнительные соглашения.
-                                </li>
-
-                                <li>
-                                    Порядок передачи показаний.
-                                </li>
-
-                                <li>
-                                    Порядок рассмотрения обращений.
-                                </li>
-
-                                <li>
-                                    Условия электронного
-                                    документооборота.
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <aside class="business-note">
-                        [ЗАПОЛНИТЬ: перечень применимых нормативных
-                        актов со ссылками на актуальные редакции
-                        и датой проверки.]
-                    </aside>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 07. ОГРАНИЧЕНИЕ
-            ========================================= -->
-
-            <details class="business-item" id="limits">
-
-                <summary>
-                    <span class="business-number">07</span>
-
-                    <h2>Ограничение энергоснабжения</h2>
-
-                    <span class="business-description">
-                        Уведомление, действия
-                        и восстановление снабжения
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <p>
-                        Порядок ограничения определяется его основанием,
-                        применимыми правилами и условиями договора.
-                        Ограничение по обязательствам потребителя
-                        и отключение из-за аварии требуют
-                        разных действий.
-                    </p>
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Проверьте уведомление</h3>
-
-                            <ul>
-                                <li>
-                                    Организацию и номер договора.
-                                </li>
-
-                                <li>Объект и точки поставки.</li>
-
-                                <li>Причину ограничения.</li>
-
-                                <li>
-                                    Вид ограничения, дату
-                                    и последовательность действий.
-                                </li>
-
-                                <li>
-                                    Требования к потребителю
-                                    и контакт ответственного лица.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Действия потребителя</h3>
-
-                            <ol>
-                                <li>
-                                    Проверьте обстоятельства,
-                                    указанные в уведомлении.
-                                </li>
-
-                                <li>
-                                    При расхождениях направьте
-                                    подтверждающие документы.
-                                </li>
-
-                                <li>
-                                    Устраните причину ограничения.
-                                </li>
-
-                                <li>
-                                    Передайте подтверждение
-                                    и согласуйте дальнейшие действия.
-                                </li>
-                            </ol>
-                        </div>
-
-                    </div>
-
-                    <h3>Возобновление снабжения</h3>
-
-                    <p>
-                        Укажите номер договора, объект,
-                        реквизиты уведомления и сведения
-                        об устранении причины ограничения.
-                    </p>
-
-                    <p>
-                        [ЗАПОЛНИТЬ: порядок подтверждения,
-                        взаимодействия с сетевой организацией
-                        и информирования потребителя.]
-                    </p>
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/poryadok-ogranicheniya.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Порядок введения
-                                    и отмены ограничения
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/ustranenie-prichiny-ogranicheniya.docx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <div>
-                                <strong>
-                                    Сообщение об устранении
-                                    причины ограничения
-                                </strong>
-                                <small>Скачать DOCX</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
-
-            <!-- =========================================
-                 08. ОБРАЩЕНИЯ
-            ========================================= -->
-
-            <details class="business-item" id="requests">
-
-                <summary>
-                    <span class="business-number">08</span>
-
-                    <h2>Обращения, претензии и жалобы</h2>
-
-                    <span class="business-description">
-                        Подача, рассмотрение
-                        и качество снабжения
-                    </span>
-
-                    <span
-                        class="business-chevron"
-                        aria-hidden="true"
-                    ></span>
-                </summary>
-
-                <div class="business-content">
-
-                    <div class="business-columns">
-
-                        <div>
-                            <h3>Что указать</h3>
-
-                            <ul>
-                                <li>
-                                    Полное наименование организации.
-                                </li>
-
-                                <li>
-                                    Номер договора и адрес объекта.
-                                </li>
-
-                                <li>
-                                    Контакты и полномочия
-                                    представителя.
-                                </li>
-
-                                <li>
-                                    Обстоятельства обращения
-                                    и требования.
-                                </li>
-
-                                <li>
-                                    Предпочтительный способ
-                                    получения ответа.
-                                </li>
-
-                                <li>
-                                    Перечень приложенных документов.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Куда направить</h3>
-
-                            <p>
-                                Электронная почта:
-                                [ЗАПОЛНИТЬ: адрес приёма обращений].
-                            </p>
-
-                            <p>
-                                Почтовый адрес:
-                                [ЗАПОЛНИТЬ: адрес].
-                            </p>
-
-                            <p>
-                                Личная подача:
-                                [ЗАПОЛНИТЬ: адрес и часы приёма].
-                            </p>
-
-                            <p>
-                                ЭДО:
-                                [ЗАПОЛНИТЬ: порядок направления].
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <h3>Качество электроснабжения</h3>
-
-                    <p>
-                        Укажите время и продолжительность нарушения,
-                        его характер и затронутые объекты.
-                        Приложите имеющиеся акты, результаты измерений
-                        и другие подтверждающие материалы.
-                    </p>
-
-                    <h3>Регистрация и ответ</h3>
-
-                    <p>
-                        Сохраните подтверждение получения обращения.
-                        При повторной переписке указывайте его дату
-                        и регистрационный номер.
-                    </p>
-
-                    <ul>
-                        <li>
-                            Начисления и платежи:
-                            [ЗАПОЛНИТЬ: срок рассмотрения].
-                        </li>
-
-                        <li>
-                            Приборы учёта:
-                            [ЗАПОЛНИТЬ: срок рассмотрения].
-                        </li>
-
-                        <li>
-                            Надёжность и качество снабжения:
-                            [ЗАПОЛНИТЬ: порядок проверки и ответа].
-                        </li>
-
-                        <li>
-                            Другие вопросы:
-                            [ЗАПОЛНИТЬ: срок рассмотрения].
-                        </li>
-                    </ul>
-
-                    <div class="business-documents">
-
-                        <a
-                            href="documents/obrazets-obrashcheniya.docx"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >DOC</span>
-
-                            <div>
-                                <strong>
-                                    Образец обращения
-                                    юридического лица
-                                </strong>
-                                <small>Скачать DOCX</small>
-                            </div>
-                        </a>
-
-                        <a
-                            href="documents/poryadok-rassmotreniya-obrashcheniy.pdf"
-                            class="business-document"
-                            download
-                        >
-                            <span
-                                class="business-document-icon"
-                                aria-hidden="true"
-                            >PDF</span>
-
-                            <div>
-                                <strong>
-                                    Порядок рассмотрения обращений
-                                </strong>
-                                <small>Скачать PDF</small>
-                            </div>
-                        </a>
-
-                    </div>
-
-                </div>
-            </details>
-
+        <section class="business-intro" aria-labelledby="consumers-title">
+            <h1 id="consumers-title">Потребителям</h1>
+            <div class="consumers-pending__notice">
+                <p>Позже здесь появится информация.</p>
+            </div>
         </section>
-
-
-        <!-- ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ -->
-
-        <section class="business-faq" aria-labelledby="faq-title">
-
-            <h2 id="faq-title">Часто задаваемые вопросы</h2>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Какие документы нужны для заключения договора?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Потребуются сведения об организации и полномочиях
-                        представителя, документы на объект и сведения
-                        о присоединении и учёте. Точный комплект зависит
-                        от объекта и условий поставки; запросите
-                        перечень у специалиста.
-                    </p>
-                </div>
-            </details>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Как сообщить об изменении реквизитов организации?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Направьте обращение с номером договора, прежними
-                        и новыми реквизитами, датой изменения
-                        и подтверждающими документами. Укажите контакт
-                        сотрудника для уточнений.
-                    </p>
-                </div>
-            </details>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Как передавать показания по нескольким объектам?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Разделяйте данные по объектам и приборам учёта.
-                        Для каждого укажите адрес, номер прибора,
-                        дату и показания по тарифным зонам.
-                        Формат, сроки и способ передачи согласуйте
-                        по договору.
-                    </p>
-                </div>
-            </details>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Что делать, если в показаниях допущена ошибка?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Сообщите номер договора, объект, номер прибора,
-                        дату передачи, ошибочное и корректное значения.
-                        При наличии приложите фотографию счётчика.
-                    </p>
-                </div>
-            </details>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Как получить акт сверки или уточнить начисления?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Направьте запрос с наименованием организации,
-                        ИНН, номером договора и периодом сверки.
-                        При вопросе по начислениям укажите спорный
-                        документ и причину обращения.
-                    </p>
-                </div>
-            </details>
-
-            <details class="business-faq-item">
-                <summary>
-                    <span>
-                        Можно ли подключить электронный документооборот?
-                    </span>
-                    <span class="business-chevron" aria-hidden="true"></span>
-                </summary>
-
-                <div class="business-faq-answer">
-                    <p>
-                        Возможность подключения, оператора и состав
-                        документов необходимо согласовать с компанией.
-                        Передайте ИНН организации и контакты
-                        ответственного сотрудника.
-                    </p>
-                </div>
-            </details>
-
-        </section>
-
-
-        <!-- КОНСУЛЬТАЦИЯ -->
-
-           <section class="business-help">
-
-    <div>
-        <h2>Нужна консультация?</h2>
-
-        <p>
-            Поможем разобраться с документами
-            и условиями энергоснабжения.
-        </p>
-    </div>
-
-    <a href="contacts.html" class="business-contact-button">
-        Свяжитесь с нами
-    </a>
-
-
-        </section>
-
     </div>
 </main>
 
@@ -1595,5 +225,275 @@ document.querySelectorAll(".faq-question").forEach(question => {
 </script>
 
 <script src="js/search.js?v=20261016-mobile3"></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/contact.js?v=1" defer></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/form.js" defer></script>
 </body>
 </html>

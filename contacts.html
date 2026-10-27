@@ -29,14 +29,6 @@
                     </svg>
                 </button>
 
-                 <a href="login.html"
-                     class="icon-button account-button"
-                     aria-label="Личный кабинет">
-                    <svg viewBox="0 0 32 32">
-                        <circle cx="16" cy="9" r="6"></circle>
-                        <path d="M5 30C5 22 9 19 16 19C23 19 27 22 27 30"></path>
-                    </svg>
-                </a>
                 <a href="#contacts" class="contact-button">
                     Свяжитесь с нами
                 </a>
@@ -216,5 +208,140 @@
     </div>
 </footer>
 <script src="js/search.js?v=20261016-mobile3"></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/form.js" defer></script>
 </body>
 </html>

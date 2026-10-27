@@ -35,14 +35,7 @@
                     </svg>
                 </button>
 
-                 <a href="login.html"
-                     class="icon-button account-button"
-                     aria-label="Личный кабинет">
-                    <svg viewBox="0 0 32 32">
-                        <circle cx="16" cy="9" r="6"></circle>
-                        <path d="M5 30C5 22 9 19 16 19C23 19 27 22 27 30"></path>
-                    </svg>
-                </a>
+
 
                 <a href="#contacts" class="contact-button">
                     Свяжитесь с нами
@@ -79,251 +72,118 @@
 
         <!-- ИСТОРИЯ КОМПАНИИ -->
 
-        <section class="about-history" aria-labelledby="history-title">
+<section class="about-history ep-story" aria-labelledby="history-title">
 
-            <h1 class="about-section-title" id="history-title">
-                История компании
-            </h1>
+    <h1 class="about-section-title" id="history-title">
+        О компании
+    </h1>
 
-            <p class="about-history-intro">
-                ООО «Энергопрогноз» основано в [год основания].
-                Основное направление деятельности компании —
-                [укажите направление деятельности].
-                Компания работает с [укажите категории клиентов]
-                и оказывает услуги в области
-                [укажите основные услуги].
+    <div class="ep-story__intro">
+        <p>
+            ООО «Энергопрогноз» — энергосбытовая компания и субъект
+            оптового рынка электрической энергии и мощности (ОРЭМ),
+            включённый в
+            <a class="about-registry-link"
+               href="ВСТАВИТЬ_ССЫЛКУ_НА_РЕЕСТР"
+               target="_blank"
+               rel="noopener noreferrer">реестр субъектов оптового рынка</a>.
+        </p>
+
+        <p>
+            Мы обеспечиваем энергоснабжение юридических лиц и крупных
+            промышленных предприятий, организуя закупку электрической
+            энергии и мощности на оптовом рынке и сопровождая весь
+            комплекс процессов, связанных с её поставкой конечному
+            потребителю.
+        </p>
+    </div>
+
+    <div class="ep-story__row">
+        <img
+            class="ep-story__photo"
+            src="images/about-power-lines.png"
+            alt="Линии электропередачи в горной местности"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+        >
+
+        <div class="ep-story__text">
+            <p>
+                Компетенции компании охватывают прогнозирование
+                потребления, коммерческий учёт электрической энергии,
+                взаимодействие с инфраструктурными организациями ОРЭМ,
+                контроль фактического потребления и отклонений,
+                анализ стоимости электроэнергии и мощности, а также
+                поиск возможностей для снижения энергетических затрат
+                заказчика.
             </p>
+            <p>
+                «Энергопрогноз» обладает практическим опытом работы
+                в энергетике и энергоснабжения крупных промышленных,
+                в том числе горнодобывающих, объектов в сложных
+                территориальных условиях.
+            </p>
+        </div>
+    </div>
 
-            <div class="about-history-grid">
+    <div class="ep-story__row ep-story__row--second">
+    <div class="ep-story__text">
+        <p>
+            Мы рассматриваем энергоснабжение не только как
+            поставку электроэнергии, но и как систему управления
+            энергетическими затратами предприятия: от анализа
+            исходного профиля потребления и организации
+            коммерческого учёта до ежедневного прогнозирования,
+            сопровождения работы на ОРЭМ и последующей аналитики.
+        </p>
 
-                <div class="about-history-text">
+        <div class="ep-story__mission">
+            <p>
+                Наша задача — обеспечить клиенту надёжное энергоснабжение,
+                прозрачное формирование стоимости электроэнергии
+                и профессиональное сопровождение на всех этапах работы.
+            </p>
+        </div>
+    </div>
 
-                    <p>
-                        В начале своей деятельности компания
-                        [опишите, с чего начиналась работа:
-                        первые услуги, проекты или направления].
-                    </p>
+    <div class="ep-story__photos">
+        <img
+            class="ep-story__photo"
+            src="images/about-substation.png"
+            alt="Оборудование электрической подстанции"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+        >
 
-                    <p>
-                        Следующим этапом развития стало
-                        [укажите важное событие: расширение команды,
-                        запуск нового направления, выход
-                        в другой регион или реализацию проекта].
-                    </p>
-
-                    <p>
-                        Сегодня «Энергопрогноз»
-                        [укажите текущий масштаб деятельности
-                        и основные задачи компании].
-                    </p>
-
-                </div>
-
-                <!--
-                    Когда будет фотография, замени этот div на:
-
-                    <img
-                        class="about-history-photo"
-                        src="images/about-company.jpg"
-                        alt="Офис компании Энергопрогноз"
-                        width="800"
-                        height="500"
-                    >
-
-                    Описание alt должно соответствовать фотографии.
-                -->
-
-                <div
-                    class="about-history-photo about-photo-placeholder"
-                    role="img"
-                    aria-label="Место для фотографии компании"
-                >
-                    <span>Фотография компании</span>
-                </div>
-
-            </div>
-
-            <!--
-                Когда будет широкая фотография, замени этот div на:
-
-                <img
-                    class="about-history-wide"
-                    src="images/about-panorama.jpg"
-                    alt="Команда компании Энергопрогноз"
-                    width="1600"
-                    height="500"
-                    loading="lazy"
-                >
-            -->
-
-            <div
-                class="about-history-wide about-photo-placeholder"
-                role="img"
-                aria-label="Место для широкой фотографии"
-            >
-                <span>Широкая фотография</span>
-            </div>
-
-        </section>
+        <img
+            class="ep-story__photo"
+            src="images/about-analyst.png"
+            alt="Специалист анализирует графики энергопотребления"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+        >
+    </div>
+</div>
+</section>
 
         <!-- =====================================================
      НАШИ ПРЕИМУЩЕСТВА
 ===================================================== -->
 
-<section
-    class="about-advantages"
-    aria-labelledby="about-advantages-title"
->
 
-    <h2 class="about-section-title" id="about-advantages-title">
-        Наши преимущества
-    </h2>
-
-    <div class="about-advantages-list">
-
-        <div class="about-advantage">
-
-            <h3>Комплексный подход</h3>
-
-            <p>
-                Объединяем прогнозирование, учёт и анализ
-                энергопотребления для решения задач вашей организации.
-            </p>
-
-        </div>
-
-        <div class="about-advantage">
-
-            <h3>Точность данных</h3>
-
-            <p>
-                Уделяем внимание качеству исходной информации,
-                чтобы расчёты и выводы помогали принимать решения.
-            </p>
-
-        </div>
-
-        <div class="about-advantage">
-
-            <h3>Партнёрство</h3>
-
-            <p>
-                Выстраиваем взаимодействие с учётом особенностей
-                предприятия и его задач в области энергоснабжения.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
      РУКОВОДСТВО
 ===================================================== -->
 
-<section
-    class="about-management"
-    aria-labelledby="about-management-title"
->
 
-    <h2 class="about-section-title" id="about-management-title">
-        Руководство
-    </h2>
-
-    <div class="about-management-list">
-
-        <!-- ПЕРВЫЙ РУКОВОДИТЕЛЬ -->
-
-        <article class="about-manager">
-
-            <!--
-                Когда появится фотография, замени следующий div на:
-
-                <img
-                    class="about-manager-photo"
-                    src="images/director.jpg"
-                    alt="ФИО руководителя"
-                    width="400"
-                    height="440"
-                    loading="lazy"
-                >
-            -->
-
-            <div
-                class="about-manager-photo about-photo-placeholder"
-                role="img"
-                aria-label="Место для фотографии руководителя"
-            ></div>
-
-            <div class="about-manager-info">
-
-                <h3>[Фамилия Имя Отчество]</h3>
-
-                <div class="about-manager-details">
-
-                    <p>
-                        Должность: [укажите должность]
-                    </p>
-
-                    <p>
-                        Контакты для связи: [электронная почта]
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- ВТОРОЙ РУКОВОДИТЕЛЬ -->
-
-        <article class="about-manager">
-
-            <!--
-                Когда появится фотография, замени следующий div на:
-
-                <img
-                    class="about-manager-photo"
-                    src="images/deputy-director.jpg"
-                    alt="ФИО руководителя"
-                    width="400"
-                    height="440"
-                    loading="lazy"
-                >
-            -->
-
-            <div
-                class="about-manager-photo about-photo-placeholder"
-                role="img"
-                aria-label="Место для фотографии руководителя"
-            ></div>
-
-            <div class="about-manager-info">
-
-                <h3>[Фамилия Имя Отчество]</h3>
-
-                <div class="about-manager-details">
-
-                    <p>
-                        Должность: [укажите должность]
-                    </p>
-
-                    <p>
-                        Контакты для связи: [электронная почта]
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
 <!-- =====================================================
      ТЕРРИТОРИЯ ОБСЛУЖИВАНИЯ
 ===================================================== -->
@@ -397,40 +257,7 @@
      ПАРТНЁРЫ
 ===================================================== -->
 
-<section
-    class="about-partners"
-    aria-labelledby="about-partners-title"
->
 
-    <h2 class="about-section-title" id="about-partners-title">
-        Партнёры
-    </h2>
-
-    <div class="about-partners-placeholder">
-
-        <span class="about-placeholder-label">
-            Наши партнёры
-        </span>
-
-        <p class="about-placeholder-title">
-            Добавить информацию
-        </p>
-
-        <span class="about-placeholder-description">
-            Здесь будут размещены логотипы
-            и названия партнёров компании.
-        </span>
-
-        <div class="about-partners-preview" aria-hidden="true">
-            <span class="about-partner-slot"></span>
-            <span class="about-partner-slot"></span>
-            <span class="about-partner-slot"></span>
-            <span class="about-partner-slot"></span>
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
@@ -566,5 +393,140 @@
     </div>
 </footer>
 <script src="js/search.js?v=20261016-mobile3"></script>
+<!-- ОКНО ОБРАТНОЙ СВЯЗИ -->
+
+<dialog class="contact-dialog" id="contact-dialog"
+        aria-labelledby="contact-dialog-title">
+
+    <div class="contact-dialog-top">
+        <h2 id="contact-dialog-title">Связаться с нами</h2>
+
+        <button class="contact-close" type="button"
+                aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <!-- ВЫБОР ТЕМЫ -->
+
+        <fieldset class="contact-topics">
+            <legend>Выберите тему обращения</legend>
+
+            <div class="contact-topics-grid">
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="new-client" checked>
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8M15 12h8"/>
+                        </svg>
+                        <strong>Стать клиентом</strong>
+                        <span>Подключение и условия сотрудничества</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="existing-client">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 3H5v18h14V8l-5-5Z"/>
+                            <path d="M14 3v5h5M8 12h8M8 16h6"/>
+                        </svg>
+                        <strong>Я уже клиент</strong>
+                        <span>Вопросы по договору и обслуживанию</span>
+                    </span>
+                </label>
+
+                <label class="contact-topic">
+                    <input type="radio" name="topic"
+                           value="other">
+
+                    <span class="contact-topic-card">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z"/>
+                        </svg>
+                        <strong>Другой вопрос</strong>
+                        <span>Предложения и общие обращения</span>
+                    </span>
+                </label>
+
+            </div>
+        </fieldset>
+
+        <!-- ПОЛЯ ФОРМЫ -->
+
+        <div class="contact-form-heading">
+            <h3 id="contact-form-title">Обсудим сотрудничество</h3>
+            <p id="contact-form-description">
+                Расскажите о вашей организации и задаче.
+            </p>
+        </div>
+
+        <div class="contact-fields">
+
+            <label class="contact-field" id="contact-company-field">
+                <span>Организация</span>
+                <input type="text" name="company"
+                       autocomplete="organization"
+                       maxlength="200">
+            </label>
+
+            <label class="contact-field" id="contact-contract-field" hidden>
+                <span>Номер договора — если есть</span>
+                <input type="text" name="contract"
+                       maxlength="100" disabled>
+            </label>
+
+            <label class="contact-field">
+                <span>Ваше имя *</span>
+                <input type="text" name="name"
+                       autocomplete="name"
+                       maxlength="100" required>
+            </label>
+
+            <label class="contact-field">
+                <span>Телефон или email *</span>
+                <input type="text" name="contact"
+                       maxlength="200" required>
+            </label>
+
+            <label class="contact-field contact-field-wide">
+                <span>Сообщение *</span>
+                <textarea name="message" rows="4"
+                          maxlength="5000" required></textarea>
+            </label>
+
+        </div>
+
+        <label class="contact-attachment">
+            <span>Прикрепить файл</span>
+            <input type="file" name="attachment"
+                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+
+        <label class="contact-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Даю согласие на обработку персональных данных *</span>
+        </label>
+
+        <p class="contact-status" role="status" aria-live="polite"></p>
+
+        <button class="contact-submit" type="submit" disabled>
+            Отправить
+        </button>
+
+    </form>
+</dialog>
+
+<script src="js/form.js" defer></script>
 </body>
 </html>
